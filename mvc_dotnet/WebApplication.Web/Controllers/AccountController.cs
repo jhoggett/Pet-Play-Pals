@@ -78,7 +78,7 @@ namespace WebApplication.Web.Controllers
                 authProvider.Register(registerViewModel.Email, registerViewModel.Password, role: "User"); 
 
                 // Redirect the user where you want them to go after registering
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Account");
             }
 
             return View(registerViewModel);

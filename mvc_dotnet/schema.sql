@@ -4,16 +4,16 @@ USE master;
 GO
 
 -- Delete the DemoDB Database (IF EXISTS)
-IF EXISTS(select * from sys.databases where name='DemoDB')
-DROP DATABASE DemoDB;
+IF EXISTS(select * from sys.databases where name='PetPlayPals')
+DROP DATABASE PetPlayPals;
 GO
 
 -- Create a new DemoDB Database
-CREATE DATABASE DemoDB;
+CREATE DATABASE PetPlayPals;
 GO
 
 -- Switch to the DemoDB Database
-USE DemoDB
+USE PetPlayPals
 GO
 
 BEGIN TRANSACTION;
