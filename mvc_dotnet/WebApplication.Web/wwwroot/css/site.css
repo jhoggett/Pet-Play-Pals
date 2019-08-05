@@ -3,6 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    
 }
 
 /* Wrapping element */
@@ -11,31 +12,6 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     color: royalblue;
-}
-
-.navbar-toggle {
-    background-color: royalblue;
-}
-
-.navbar-header {
-    background-color: royalblue;
-}
-
-.navbar-li {
-    background-color: royalblue;
-}
-
-.nav navbar-nav navbar-right {
-    background-color: royalblue;
-}
-
-.home-page-img {
-    height: auto;
-    width: 100%;
-}
-
-.3-p-header {
-    white-space: nowrap;
 }
 
 /* Carousel */
@@ -59,5 +35,57 @@ body {
     /* Hide captions */
     .carousel-caption {
         display: none;
+    }
+}
+
+/*Here is the start of our css*/
+
+.navbar-inverse{
+    background-color: royalblue;
+    border-color: royalblue;
+}
+
+nav > li{
+    color: white;
+}
+
+
+.home-page-img {
+    height: auto;
+    width: 100%;
+}
+
+
+.pet-play-header {
+    text-align: center;
+}
+
+.p-header {
+    text-align: center;
+}
+
+.Calendar-home-page-header {
+    text-align: center;
+}
+
+.site-description{
+    text-align: center;
+}
+
+@media screen and (max-width: 850px){
+    .pet-play-header{
+        font-size: 2em;
+    }
+    .p-header {
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 1.5em;
+    }
+    .Calendar-home-page-header{
+        font-size: 1.5em;
+    }
+    .home-page-img {
+        height: auto;
+        width: 100%;
     }
 }
