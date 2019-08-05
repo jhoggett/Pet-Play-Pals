@@ -10,6 +10,32 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    color: royalblue;
+}
+
+.navbar-toggle {
+    background-color: royalblue;
+}
+
+.navbar-header {
+    background-color: royalblue;
+}
+
+.navbar-li {
+    background-color: royalblue;
+}
+
+.nav navbar-nav navbar-right {
+    background-color: royalblue;
+}
+
+.home-page-img {
+    height: auto;
+    width: 100%;
+}
+
+.3-p-header {
+    white-space: nowrap;
 }
 
 /* Carousel */
