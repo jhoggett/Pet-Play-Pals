@@ -1,8 +1,28 @@
-﻿@model User
+﻿@model PetsUserViewModel
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
 
-<p>Welcome @Model.Username</p>
+<h1 class="profileHeader"><b>Pet Play Pals Profile Page</b></h1>
+<h2 class="profileWelcome"><b>Welcome Back @Model.User.Username</b></h2>
+<br />
+<br />
+
+
+@foreach (Pets pet in Model.Pets)
+{
+    <br />
+    <img src="~/images/@(pet.Photo).PNG" class="petPhoto" />
+    <br />
+    <ul>
+        <br />
+        <li class="petName">Name: @pet.Name</li>
+        <li class="petType">Type: @pet.Type</li>
+        <li class="petBreed">Breed: @pet.Breed</li>
+        <li class="petAge">Age: @pet.Age</li>
+        <li class="petWeight">Weight: @pet.Weight</li>
+        <li class="petPersonality">Personality: @pet.Personality</li>
+    </ul>
+}
+

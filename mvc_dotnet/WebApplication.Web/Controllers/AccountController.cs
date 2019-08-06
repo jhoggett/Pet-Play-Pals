@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebApplication.Web.DAL;
+using WebApplication.Web.Models;
 using WebApplication.Web.Models.Account;
 using WebApplication.Web.Providers.Auth;
 
@@ -11,10 +13,14 @@ namespace WebApplication.Web.Controllers
     public class AccountController : Controller
     {
         private readonly IAuthProvider authProvider;
-        public AccountController(IAuthProvider authProvider)
+        private IPetDAO petDAO;
+        private IUserDAL userDAL;
+        public AccountController(IAuthProvider authProvider, IPetDAO petDAO, IUserDAL userDAL)
         {
             this.authProvider = authProvider;
-        }
+            this.petDAO = petDAO;
+            this.userDAL = userDAL;
+        }   
         
         //[AuthorizationFilter] // actions can be filtered to only those that are logged in
         [AuthorizationFilter("Admin", "Author", "Manager", "User")]  //<-- or filtered to only those that have a certain role
@@ -22,7 +28,15 @@ namespace WebApplication.Web.Controllers
         public IActionResult Index()
         {
             var user = authProvider.GetCurrentUser();
-            return View(user);
+
+            // This is where I started using VM
+            PetsUserViewModel vm = new PetsUserViewModel();
+            vm.User = userDAL.GetUser(user.Username);
+            vm.Pets = petDAO.GetAllPets(user.Id);
+
+            // used to pass in user
+            return View(vm);
+            
         }
 
         [HttpGet]

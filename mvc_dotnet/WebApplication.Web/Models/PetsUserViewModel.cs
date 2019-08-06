@@ -7,7 +7,7 @@ namespace WebApplication.Web.Models
 {
     public class PetsUserViewModel
     {
-        public List<Pets> Pets { get; set; }
+        public IList<Pets> Pets { get; set; }
         public User User { get; set; }
 
 
