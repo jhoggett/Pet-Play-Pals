@@ -29,5 +29,21 @@ CREATE TABLE users
 	constraint pk_users primary key (id)
 );
 
+Create Table Pets
+(
+	id			int			 identity(1,1),
+	userId		int			 not null,
+	name		varchar(50)  not null, 
+	type		varchar(50)  not null, 
+	personality varchar(100) not null,
+	weight		int		     not null, 
+	breed		varchar(50)  not null,
+	age			int			 not null, 
+	photo		varchar(50)  not null,
+
+	constraint pk_Pets  primary key (id),
+	constraint fk_UserId foreign key (userId) references users(Id),
+);
+
 
 COMMIT TRANSACTION;
