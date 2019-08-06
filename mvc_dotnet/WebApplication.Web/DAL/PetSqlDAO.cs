@@ -16,6 +16,42 @@ namespace WebApplication.Web.DAL
             this.connectionString = connectionString;
         }
 
+
+        public int AddPet(Pets pet)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    //TODO: Finish this query
+                    conn.Open();
+
+                    string sql = $"Insert Into Pets Values (@userId, @name, @type, @personality, @weight, @breed, @age, @photo); Select @@Identity ";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@userId", pet.UserId);
+                    cmd.Parameters.AddWithValue("@type", pet.Type);
+                    cmd.Parameters.AddWithValue("@personality", pet.Personality);
+                    cmd.Parameters.AddWithValue("@weight", pet.Weight);
+                    cmd.Parameters.AddWithValue("@breed", pet.Breed);
+                    cmd.Parameters.AddWithValue("@age", pet.Age);
+                    cmd.Parameters.AddWithValue("@photo", pet.Photo);
+                    cmd.Parameters.AddWithValue("@name", pet.Name);
+
+                    int Id = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    return Id;
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
         public IList<Pets> GetAllPets(int userId)
         {
             IList<Pets> list = new List<Pets>();
@@ -60,7 +96,6 @@ namespace WebApplication.Web.DAL
             }
             return list;
         }
-
 
     }
 }

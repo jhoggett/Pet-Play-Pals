@@ -9,5 +9,7 @@ namespace WebApplication.Web.DAL
     public interface IPetDAO
     {
         IList<Pets> GetAllPets(int userId);
+
+        int AddPet(Pets pet);
     }
 }

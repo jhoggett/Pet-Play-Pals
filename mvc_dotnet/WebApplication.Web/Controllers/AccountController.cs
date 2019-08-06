@@ -92,10 +92,28 @@ namespace WebApplication.Web.Controllers
                 authProvider.Register(registerViewModel.Email, registerViewModel.Password, role: "User"); 
 
                 // Redirect the user where you want them to go after registering
-                return RedirectToAction("Index", "Account");
+                return RedirectToAction("RegisterPet", "Account");
             }
 
             return View(registerViewModel);
         }
+
+        [HttpGet]
+        public IActionResult RegisterPet(int userId)
+        {
+            PetsUserViewModel vm = new PetsUserViewModel();
+            vm.User = userDAL.GetUserById(userId);
+            return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult RegisterPet(PetsUserViewModel petsUserViewModel)
+        {
+
+             petDAO.AddPet(petsUserViewModel.pet);
+
+            return RedirectToAction("Index", "Account");
+        }
+
     }
 }

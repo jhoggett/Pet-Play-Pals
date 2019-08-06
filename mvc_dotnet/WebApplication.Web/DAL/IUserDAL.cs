@@ -15,6 +15,8 @@ namespace WebApplication.Web.DAL
         /// <returns></returns>
         User GetUser(string username);
 
+        User GetUserById(int id);
+
         /// <summary>
         /// Creates a new user.
         /// </summary>
