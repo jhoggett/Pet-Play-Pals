@@ -9,7 +9,7 @@ namespace WebApplication.Web.Models
     {
         public IList<Pets> Pets { get; set; }
         public User User { get; set; }
-        public Pets pet { get; set; }
+        public Pets Pet { get; set; }
 
 
     }

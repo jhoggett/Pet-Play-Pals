@@ -99,18 +99,25 @@ namespace WebApplication.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult RegisterPet(int userId)
+        public IActionResult RegisterPet()
         {
-            PetsUserViewModel vm = new PetsUserViewModel();
-            vm.User = userDAL.GetUserById(userId);
-            return View(vm);
+            //var user = authProvider.GetCurrentUser();
+
+            //// This is where I started using VM
+            //PetsUserViewModel vm = new PetsUserViewModel();
+            //vm.User = userDAL.GetUserById(user.Id);
+            
+            //vm.User = userDAL.GetUserById(userId);
+            return View();
         }
 
         [HttpPost]
-        public IActionResult RegisterPet(PetsUserViewModel petsUserViewModel)
+        public IActionResult RegisterPet(PetsUserViewModel vm)
         {
-
-             petDAO.AddPet(petsUserViewModel.pet);
+            var user = authProvider.GetCurrentUser();
+            vm.User = userDAL.GetUserById(user.Id);
+            vm.Pet.UserId = vm.User.Id;
+            petDAO.AddPet(vm.Pet);
 
             return RedirectToAction("Index", "Account");
         }
