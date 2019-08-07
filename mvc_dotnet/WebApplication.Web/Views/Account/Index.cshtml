@@ -6,7 +6,7 @@
 
 <div>
 
-    <h1 class="welcomeuser"> WELCOME @Model.User.Username! </h1>
+    <h1 class="welcomeuser">WELCOME @Model.User.Username! </h1>
     <p class="description">
         is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the industry's standard dummy
@@ -17,9 +17,10 @@
 
     <div class="allPets">
         <div class="card">
-            <img class="imgForPet" />
+
             @foreach (Pets pet in Model.Pets)
             {
+                <img class="imgForPet" src="@pet.Photo" />
                 <p class="petName">@pet.Name <span class="plan-unit">@pet.Type</span></p>
                 <ul class="features">
                     <li class="feature">

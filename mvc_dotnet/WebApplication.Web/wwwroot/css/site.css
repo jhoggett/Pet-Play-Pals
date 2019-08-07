@@ -116,18 +116,6 @@ nav > li{
         color: royalblue;
     }
 
-    .card {
-        float: left;
-        width: 150px;
-        margin: 20px 2px;
-        padding: 15px 25px;
-        text-align: center;
-        background: white;
-        background-clip: padding-box;
-        border: 2px solid lightblue;
-        border-color: rgba(black, .1);
-        border-radius: 5px;
-    }
     
    label {
        display: block;
@@ -142,28 +130,28 @@ label {
 .description {
     text-align: center;
     width: 90%;
-    padding-left: 100px;
-    padding-bottom: 20px;
+    padding-left: 15%;
+    padding-bottom: 15px;
 }
 
 .welcomeuser {
     padding: 10px;
-    font-size: 50px;
+    font-size: 230%;
     text-align: center;
 }
 
 .allPets {
-    width: 836px;
+    padding-top: 20px;
+    width: 100%;
     margin: 50px auto;
+    padding-left: 30%;
     overflow: hidden;
 }
 
 .yourPets {
     position: absolute;
-    padding-left: 130px;
+    padding-left: 20%;
     font-size: 30px;
-    
-    
 }
 
 .card {
