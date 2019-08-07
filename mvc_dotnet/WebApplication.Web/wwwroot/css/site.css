@@ -145,7 +145,7 @@ nav > li{
 
     .card {
         float: left;
-        width: 150px;
+        width: 15em;
         margin: 20px 2px;
         padding: 15px 25px;
         text-align: center;
@@ -192,6 +192,7 @@ nav > li{
         font-size: 24px;
         font-weight: 500;
         color: #333;
+        padding-right: 30px;
     }
 
     .plan-feature-unit {
@@ -269,7 +270,7 @@ label {
 
 .card {
     float: left;
-    width: 150px;
+    width: 40em;
     margin: 20px 2px;
     padding: 15px 25px 0px 25px;
     text-align: center;
