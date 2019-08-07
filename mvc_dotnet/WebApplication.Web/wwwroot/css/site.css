@@ -120,7 +120,11 @@ nav > li{
    label {
        display: block;
    }
-    
+
+    #photo {
+        height: auto;
+        width: 100%;
+    }
 }
 
 label {
