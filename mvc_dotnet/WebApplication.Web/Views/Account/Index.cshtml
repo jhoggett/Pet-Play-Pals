@@ -4,25 +4,35 @@
 }
 
 
-<h1 class="profileHeader"><b>Pet Play Pals Profile Page</b></h1>
-<h2 class="profileWelcome"><b>Welcome Back @Model.User.Username</b></h2>
-<br />
-<br />
+<div>
 
+    <h1 class="welcomeuser"> WELCOME @Model.User.Username! </h1>
+    <p class="description">
+        is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy
+        text ever since the 1500s, when an unknown printer took
+        a galley of type and scrambled it to make a type specimen book.
+    </p>
+    <h1 class="yourPets"> Your Pets:  <a class="add-button">+</a></h1>
 
-@foreach (Pets pet in Model.Pets)
-{
-    <br />
-    <img src="~/images/@(pet.Photo).PNG" class="petPhoto" />
-    <br />
-    <ul>
-        <br />
-        <li class="petName">Name: @pet.Name</li>
-        <li class="petType">Type: @pet.Type</li>
-        <li class="petBreed">Breed: @pet.Breed</li>
-        <li class="petAge">Age: @pet.Age</li>
-        <li class="petWeight">Weight: @pet.Weight</li>
-        <li class="petPersonality">Personality: @pet.Personality</li>
-    </ul>
-}
+    <div class="allPets">
+        <div class="card">
+            <img class="imgForPet" />
+            @foreach (Pets pet in Model.Pets)
+            {
+                <p class="petName">@pet.Name <span class="plan-unit">@pet.Type</span></p>
+                <ul class="features">
+                    <li class="feature">
+                        <span class="feature-name">Age:</span>
+                        <span class="feature-name">@pet.Age</span>
+                    </li>
+                    <li class="feature"><span class="feature-unit"><span class="feature-name">Weight:</span></span> <span class="feature-name">@pet.Weight</span></li>
+                    <li class="feature"><span class="feature-name">Type:</span> <span class="feature-name">@pet.Type</span></li>
+                    <li class="feature"><span class="feature-name">Personality:</span> <span class="feature-name">@pet.Personality</span></li>
+                </ul>
+            }
+            <!--<a class="choosePet">Edit?</a>-->
+        </div>
+    </div>
 
+</div>

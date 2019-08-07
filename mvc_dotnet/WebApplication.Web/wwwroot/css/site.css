@@ -36,6 +36,8 @@ body {
     .carousel-caption {
         display: none;
     }
+
+    
 }
 
 /*Here is the start of our css*/
@@ -72,6 +74,8 @@ nav > li{
     text-align: center;
 }
 
+
+
 @media screen and (max-width: 850px){
     .pet-play-header{
         font-size: 2em;
@@ -105,34 +109,165 @@ nav > li{
     }
 
     .petName {
+        margin-bottom: 20px;
+        line-height: 1;
         font-size: 1.5em;
-        text-align: center;
+        font-weight: bold;
+        color: royalblue;
     }
 
-    .petType {
-        font-size: 1.5em;
+    .card {
+        float: left;
+        width: 150px;
+        margin: 20px 2px;
+        padding: 15px 25px;
         text-align: center;
+        background: white;
+        background-clip: padding-box;
+        border: 2px solid lightblue;
+        border-color: rgba(black, .1);
+        border-radius: 5px;
     }
-
-    .petBreed {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-
-    .petAge {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    .petWeight {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    .petPersonality {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
+    
+   label {
+       display: block;
+   }
+    
 }
+
+label {
+    display: block;
+}
+
+.description {
+    text-align: center;
+    width: 90%;
+    padding-left: 100px;
+    padding-bottom: 20px;
+}
+
+.welcomeuser {
+    padding: 10px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.allPets {
+    width: 836px;
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.yourPets {
+    position: absolute;
+    padding-left: 130px;
+    font-size: 30px;
+    
+    
+}
+
+.card {
+    float: left;
+    width: 150px;
+    margin: 20px 2px;
+    padding: 15px 25px;
+    text-align: center;
+    background: white;
+    background-clip: padding-box;
+    border: 2px solid lightblue;
+    border-color: rgba(black, .1);
+    border-radius: 5px;
+}
+
+.imgForPet {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+}
+
+.add-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: royalblue;
+    outline: none;
+    position: absolute;
+    cursor: pointer;
+    line-height: 45px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+    color: white;
+    margin: 20px;
+    margin-top: -10px;
+}
+
+    .add-button:hover {
+        background: darkblue;
+    }
+
+
+.petName {
+    margin-bottom: 20px;
+    line-height: 1;
+    font-size: 28px;
+    font-weight: bold;
+    color: royalblue;
+}
+
+.plan-unit {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    font-weight: normal;
+    color: #aaa;
+}
+
+.features {
+    width: 120px;
+    margin: 20px auto 15px;
+    padding: 15px 0 0 15px;
+    border-top: 1px solid #e5ded6;
+    text-align: left;
+}
+
+.feature {
+    line-height: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+
+.plan-feature-unit {
+    margin-left: 2px;
+    font-size: 16px;
+}
+
+.feature-name {
+    font-size: 13px;
+    font-weight: normal;
+    color: #aaa;
+}
+
+.choosePet {
+    position: relative;
+    display: block;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background: royalblue;
+    border-bottom: black;
+    border-color: black;
+    border-radius: 4px;
+}
+
+    .choosePet:hover {
+        background: darkblue;
+    }
+
+
