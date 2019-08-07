@@ -17,9 +17,10 @@
 
     <div class="allPets">
         <div class="card">
-            <img class="imgForPet" />
+
             @foreach (Pets pet in Model.Pets)
             {
+                <img class="imgForPet" src="@pet.Photo" />
                 <p class="petName">@pet.Name <span class="plan-unit">@pet.Type</span></p>
                 <ul class="features">
                     <li class="feature">
