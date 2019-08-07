@@ -37,12 +37,15 @@
         <label asp-for="Pet.Photo">Photo: </label>
         <input type="hidden" asp-for="Pet.Photo" />
     </div>
+    <div>
     <img id="photo" style="display:none;" />
 
-    <button id="upload_widget" class="cloudinary-button">Upload files</button>
-
-    <input type="submit" value="Register Pet" class="btn btn-default" />
-
+    <button id="upload_widget" class="cloudinary-button">Upload Photo</button>
+     </div>
+    <br />
+    <div>
+        <input type="submit" value="Register Pet" class="btn btn-default" />
+    </div>
 </form>
 
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
