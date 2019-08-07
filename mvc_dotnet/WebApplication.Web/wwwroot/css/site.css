@@ -74,169 +74,6 @@ nav > li{
     text-align: center;
 }
 
-
-
-@media screen and (max-width: 850px){
-    .pet-play-header{
-        font-size: 2em;
-    }
-    .p-header {
-        white-space: nowrap;
-        overflow: hidden;
-        font-size: 1.5em;
-    }
-    .Calendar-home-page-header{
-        font-size: 1.5em;
-    }
-    .home-page-img {
-        height: auto;
-        width: 100%;
-    }
-
-    .profileHeader {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    .profileWelcome {
-        font-size: 1.5em;
-        text-align: center;
-    }
-
-    .petPhoto {
-        height: auto;
-        width: 100%;
-    }
-
-    .petName {
-        margin-bottom: 20px;
-        line-height: 1;
-        font-size: 1.5em;
-        font-weight: bold;
-        color: royalblue;
-    }
-
-    .description {
-        text-align: center;
-        width: 90%;
-        padding-left: 15%;
-        padding-bottom: 15px;
-    }
-
-    .welcomeuser {
-        padding: 10px;
-        font-size: 230%;
-        text-align: center;
-    }
-
-    .allPets {
-        padding-top: 20px;
-        width: 100%;
-        margin: 50px auto;
-        padding-left: 30%;
-        overflow: hidden;
-    }
-
-    .yourPets {
-        position: absolute;
-        padding-left: 20%;
-        font-size: 30px;
-    }
-
-    .card {
-        float: left;
-        width: 15em;
-        margin: 20px 2px;
-        padding: 15px 25px;
-        text-align: center;
-        background: white;
-        background-clip: padding-box;
-        border: 2px solid lightblue;
-        border-color: rgba(black, .1);
-        border-radius: 5px;
-    }
-
-    .imgForPet {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 98%;
-    }
-
-    .petName {
-        margin-bottom: 20px;
-        line-height: 1;
-        font-size: 28px;
-        font-weight: bold;
-        color: royalblue;
-    }
-
-    .plan-unit {
-        display: block;
-        margin-top: 5px;
-        font-size: 13px;
-        font-weight: normal;
-        color: #aaa;
-    }
-
-    .features {
-        width: 120px;
-        margin: 20px auto 15px;
-        padding: 15px 0 0 15px;
-        border-top: 1px solid #e5ded6;
-        text-align: left;
-    }
-
-    .feature {
-        line-height: 20px;
-        font-size: 24px;
-        font-weight: 500;
-        color: #333;
-        padding-right: 30px;
-    }
-
-    .plan-feature-unit {
-        margin-left: 2px;
-        font-size: 16px;
-    }
-
-    .feature-name {
-        font-size: 13px;
-        font-weight: normal;
-        color: #aaa;
-    }
-
-    .add-button {
-        width: 75%;
-        height: auto;
-        border-radius: 50%;
-        background: royalblue;
-        outline: none;
-        position: absolute;
-        cursor: pointer;
-        line-height: 45px;
-        text-align: center;
-        font-size: 30px;
-        font-weight: 100;
-        color: white;
-        margin: 20px;
-        margin-top: -10px;
-    }
-
-        .add-button:hover {
-            background: darkblue;
-        }
-
-   label {
-       display: block;
-   }
-
-    #photo {
-        height: auto;
-        width: 100%;
-    }
-}
-
 label {
     display: block;
 }
@@ -258,13 +95,14 @@ label {
     padding-top: 20px;
     width: 100%;
     margin: 50px auto;
-    padding-left: 30%;
+    padding-left: 25%;
+    padding-right: 25%;
     overflow: hidden;
 }
 
 .yourPets {
     position: absolute;
-    padding-left: 20%;
+    padding-left: 25%;
     font-size: 30px;
 }
 
@@ -371,5 +209,174 @@ label {
     .choosePet:hover {
         background: darkblue;
     }
+
+        #photo {
+        height: auto;
+        width: 100%;
+    }
+
+@media screen and (max-width: 850px){
+    .pet-play-header{
+        font-size: 2em;
+    }
+    .p-header {
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 1.5em;
+    }
+    .Calendar-home-page-header{
+        font-size: 1.5em;
+    }
+    .home-page-img {
+        height: auto;
+        width: 100%;
+    }
+
+    .profileHeader {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .profileWelcome {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .petPhoto {
+        height: auto;
+        width: 100%;
+    }
+
+    .petName {
+        margin-bottom: 20px;
+        line-height: 1;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: royalblue;
+    }
+
+    .description {
+        text-align: center;
+        width: 90%;
+        padding-left: 15%;
+        padding-bottom: 15px;
+    }
+
+    .welcomeuser {
+        padding: 10px;
+        font-size: 230%;
+        text-align: center;
+    }
+
+    .allPets {
+        padding-top: 20px;
+        width: 100%;
+        margin: 50px auto;
+        padding-left: 25%;
+        padding-right: 25%;
+        overflow: hidden;
+    }
+
+    .yourPets {
+        position: absolute;
+        padding-left: 25%;
+        font-size: 30px;
+    }
+
+    .card {
+        float: left;
+        width: 15em;
+        margin: 20px 2px;
+        padding: 15px 25px 0 25px;
+        text-align: center;
+        background: white;
+        background-clip: padding-box;
+        border: 2px solid lightblue;
+        border-color: rgba(black, .1);
+        border-radius: 5px;
+    }
+
+    .imgForPet {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 98%;
+    }
+
+    .petName {
+        margin-bottom: 20px;
+        line-height: 1;
+        font-size: 28px;
+        font-weight: bold;
+        color: royalblue;
+    }
+
+    .plan-unit {
+        display: block;
+        margin-top: 5px;
+        font-size: 13px;
+        font-weight: normal;
+        color: #aaa;
+    }
+
+    .features {
+        width: 120px;
+        margin: 20px auto 15px;
+        padding: 15px 0 0 15px;
+        border-top: 1px solid #e5ded6;
+        text-align: left;
+    }
+
+    .feature {
+        line-height: 20px;
+        font-size: 24px;
+        font-weight: 500;
+        color: #333;
+        padding-right: 30px;
+    }
+
+    .plan-feature-unit {
+        margin-left: 2px;
+        font-size: 16px;
+    }
+
+    .feature-name {
+        font-size: 13px;
+        font-weight: normal;
+        color: #aaa;
+    }
+
+    .add-button {
+        width: 75%;
+        height: auto;
+        border-radius: 50%;
+        background: royalblue;
+        outline: none;
+        position: absolute;
+        cursor: pointer;
+        line-height: 45px;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 100;
+        color: white;
+        margin: 20px;
+        margin-top: -10px;
+    }
+
+        .add-button:hover {
+            background: darkblue;
+        }
+
+   label {
+       display: block;
+   }
+
+    #photo {
+        height: auto;
+        width: 100%;
+    }
+}
+
+
 
 
