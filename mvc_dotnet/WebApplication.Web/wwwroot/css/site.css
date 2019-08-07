@@ -9,8 +9,8 @@ body {
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1em;
+    padding-right: 1em;
     color: royalblue;
 }
 
@@ -269,9 +269,9 @@ label {
     }
 
     .allPets {
-        padding-top: 20px;
+        padding-top: 1.5em;
         width: 100%;
-        margin: 50px auto;
+        margin: 4em auto;
         padding-left: 25%;
         padding-right: 25%;
         overflow: hidden;
