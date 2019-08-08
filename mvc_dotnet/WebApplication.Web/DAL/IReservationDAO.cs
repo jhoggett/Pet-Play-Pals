@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication.Web.Models;
 using WebApplication.Web.Models.Account;
 
 namespace WebApplication.Web.DAL
@@ -10,7 +11,7 @@ namespace WebApplication.Web.DAL
     {
         IList<Reservation> GetAllReservationsForUser(int userId);
 
-        int AddReservation(Reservation reservation);
+        int AddReservation(ReservationUserViewModel reservation);
 
 
     }

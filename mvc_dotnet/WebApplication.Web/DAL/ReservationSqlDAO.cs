@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplication.Web.Models;
 using WebApplication.Web.Models.Account;
 
 namespace WebApplication.Web.DAL
@@ -16,24 +17,32 @@ namespace WebApplication.Web.DAL
             this.connectionString = connectionString;
         }
 
-        public int AddReservation(Reservation reservation)
+        public int AddReservation(ReservationUserViewModel reservation)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    //TODO: Finish this query
+                    
                     conn.Open();
 
-                    string sql = $"Insert Into Reservations Values (@address, @startTime, @endTime, @petName); Select @@Identity ";
+                    string sql = @"
+                        Declare @resId int;
+                        Insert Into Reservations Values (@address, @startTime, @endTime, @petName); 
+                        Select @resId = @@Identity;
+                        Insert into users_reservations(userId, reservationId) values(@userId, @resId);
+                        Select @resId;
+                        ";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@address", reservation.Address);
-                    cmd.Parameters.AddWithValue("@startTime", reservation.StartTime);
-                    cmd.Parameters.AddWithValue("@endTime", reservation.EndTime);
-                    cmd.Parameters.AddWithValue("@petName", reservation.PetName);
+                    cmd.Parameters.AddWithValue("@address", reservation.Reservation.Address);
+                    cmd.Parameters.AddWithValue("@startTime", reservation.Reservation.StartTime);
+                    cmd.Parameters.AddWithValue("@endTime", reservation.Reservation.EndTime);
+                    cmd.Parameters.AddWithValue("@petName", reservation.Reservation.PetName);
+                    cmd.Parameters.AddWithValue("@userId", reservation.User.Id);
 
                     int Id = Convert.ToInt32(cmd.ExecuteScalar());
+
 
                     return Id;
 
