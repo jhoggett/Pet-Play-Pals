@@ -57,13 +57,27 @@ namespace WebApplication.Web.Controllers
                 if (validLogin)
                 {
                     // Redirect the user where you want them to go after successful login
-                    return RedirectToAction("Index", "Account");
+                    return RedirectToAction("UserHome", "Account");
                 }
             }
 
             return View(loginViewModel);
         }
         
+         public IActionResult UserHome()
+        {
+            var user = authProvider.GetCurrentUser();
+
+            // This is where I started using VM
+            PetsUserViewModel vm = new PetsUserViewModel();
+            vm.User = userDAL.GetUser(user.Username);
+            vm.Pets = petDAO.GetAllPets(user.Id);
+
+            // used to pass in user
+            return View(vm);
+        }
+
+
         [HttpGet]
         public IActionResult LogOff()
         {
