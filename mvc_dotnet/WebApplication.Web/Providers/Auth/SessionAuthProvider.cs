@@ -81,7 +81,7 @@ namespace WebApplication.Web.Providers.Auth
                 user.Salt = newHash.Salt;
 
                 // Save into the db
-                userDAL.UpdateUser(user);
+                userDAL.UpdateUserPassword(user);
 
                 return true;
             }

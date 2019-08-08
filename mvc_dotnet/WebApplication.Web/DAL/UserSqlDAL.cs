@@ -134,7 +134,7 @@ namespace WebApplication.Web.DAL
         /// Updates the user in the database.
         /// </summary>
         /// <param name="user"></param>
-        public void UpdateUser(User user)
+        public void UpdateUserPassword(User user)
         {
             try
             {

@@ -4,11 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Web.DAL;
+using WebApplication.Web.Models;
 using WebApplication.Web.Providers.Auth;
 
 namespace WebApplication.Web.Controllers
 {
-    public class ReservationController : Controller
+    public class Reservationcontroller : Controller
     {
         private readonly IAuthProvider authProvider;
         private IPetDAO petDAO;
@@ -23,9 +24,21 @@ namespace WebApplication.Web.Controllers
             this.reservationDAO = reservationDAO;
         }
 
+        [HttpGet]
         public IActionResult Reservation()
         {
-            return View();
+
+            if (!authProvider.IsLoggedIn)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            var user = authProvider.GetCurrentUser();
+            
+            ReservationUserViewModel vm = new ReservationUserViewModel();
+            vm.User = userDAL.GetUser(user.Username);
+            vm.Reservations = reservationDAO.GetAllReservationsForUser(user.Id);
+
+            return View(vm);
         }
     }
 }
