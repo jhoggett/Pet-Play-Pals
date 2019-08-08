@@ -8,14 +8,14 @@ using WebApplication.Web.Providers.Auth;
 
 namespace WebApplication.Web.Controllers
 {
-    public class ReservationController : Controller
+    public class Reservationcontroller : Controller
     {
         private readonly IAuthProvider authProvider;
         private IPetDAO petDAO;
         private IUserDAL userDAL;
         private IReservationDAO reservationDAO;
 
-        public AccountController(IAuthProvider authProvider, IPetDAO petDAO, IUserDAL userDAL, IReservationDAO reservationDAO)
+        public Reservationcontroller(IAuthProvider authProvider, IPetDAO petDAO, IUserDAL userDAL, IReservationDAO reservationDAO)
         {
             this.authProvider = authProvider;
             this.petDAO = petDAO;

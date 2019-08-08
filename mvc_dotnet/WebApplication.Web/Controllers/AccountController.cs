@@ -138,6 +138,19 @@ namespace WebApplication.Web.Controllers
             return RedirectToAction("Index", "Account");
         }
 
+        [HttpGet]
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ChangePassword(ChangePasswordViewModel vm)
+        {
+            authProvider.ChangePassword(vm.OldPassword, vm.Password);
+
+            return RedirectToAction("Index", "Account");
+        }
 
     }
 }

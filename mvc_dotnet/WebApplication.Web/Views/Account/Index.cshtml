@@ -6,13 +6,14 @@
 
 <div>
 
-    <h1 class="welcomeuser">WELCOME @Model.User.Username! </h1>
-    <p class="description">
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy
-        text ever since the 1500s, when an unknown printer took
-        a galley of type and scrambled it to make a type specimen book.
-    </p>
+    <h1 class="welcomeuser">Edit Profile</h1>
+    <div class="user-info">
+        <p class="user-username">Email: @Model.User.Username</p>
+        <p class="user-name">First Name: @Model.User.FirstName Last Name: @Model.User.LastName</p>
+
+        <a asp-controller="Account" asp-action="ChangePassword" class="change-pass-button">Change Password</a>
+    </div>
+
     <h1 class="yourPets"> Your Pets:<a href="/Account/RegisterPet" class="add-button">Add Pet</a></h1>
 
     <div class="allPets">

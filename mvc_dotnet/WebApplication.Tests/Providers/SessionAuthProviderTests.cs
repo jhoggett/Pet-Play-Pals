@@ -160,7 +160,7 @@ namespace WebApplication.Tests.Providers
 
             // Assert
             Assert.IsTrue(result);
-            mockUserDal.Verify(m => m.UpdateUser(It.IsAny<User>()));
+            mockUserDal.Verify(m => m.UpdateUserPassword(It.IsAny<User>()));
         }
 
         [TestMethod]
