@@ -15,6 +15,8 @@ namespace WebApplication.Web.Controllers
         private readonly IAuthProvider authProvider;
         private IPetDAO petDAO;
         private IUserDAL userDAL;
+        
+
         public AccountController(IAuthProvider authProvider, IPetDAO petDAO, IUserDAL userDAL)
         {
             this.authProvider = authProvider;
@@ -121,6 +123,7 @@ namespace WebApplication.Web.Controllers
 
             return RedirectToAction("Index", "Account");
         }
+
 
     }
 }

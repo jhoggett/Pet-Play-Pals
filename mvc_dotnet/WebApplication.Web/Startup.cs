@@ -53,7 +53,7 @@ namespace WebApplication.Web
             services.AddTransient<IUserDAL>(m => new UserSqlDAL(connectionString));
             services.AddTransient<IUserDAL>(m => new UserSqlDAL(connectionString));
             services.AddTransient<IPetDAO>(m => new PetSqlDAO(connectionString));
-
+            services.AddTransient<IReservationDAO>(m => new ReservationSqlDAO(connectionString));
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
