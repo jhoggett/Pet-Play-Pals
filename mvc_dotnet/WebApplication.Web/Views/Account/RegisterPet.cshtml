@@ -2,9 +2,11 @@
 @{
     ViewData["Title"] = "RegisterPet";
 }
-
+</br>
+<a asp-action="Index" asp-controller="Account" class="skipFirstPet">My Profile Page</a>
+</br>
 <h2>Register your Pet</h2>
-<a asp-action="Index" asp-controller="Account" class="skipFirstPet">Skip this step and register pet later</a>
+
 
 <form asp-action="RegisterPet" asp-controller="Account" method="post">
     <div class="form-group">
