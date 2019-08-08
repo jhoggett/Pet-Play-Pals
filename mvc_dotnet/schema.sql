@@ -26,7 +26,7 @@ CREATE TABLE users
 	salt		varchar(50)	not null,
 	role		varchar(50)	default('user'),
 	firstName	varchar(50),
-	lastName	varchar(50)
+	lastName	varchar(50),
 
 	constraint pk_users primary key (id)
 );
@@ -46,6 +46,32 @@ Create Table Pets
 	constraint pk_Pets  primary key (id),
 	constraint fk_UserId foreign key (userId) references users(Id),
 );
+
+Create Table Reservations
+(
+	id			int				identity(1,1),
+	address		varchar(150)	not null,
+	startTime	datetime		not null,
+	endTime		datetime		not null,
+	petName		varchar(50)		not null,
+
+	constraint pk_Reservations	primary key (id),
+);
+
+Create Table Users_Reservations
+(
+	userId			int		not null,
+	reservationId	int		not null,
+	Constraint pk_Users_Reservations_userId_reservationId primary key (userId, reservationId),
+);
+
+ALTER TABLE Users_Reservations
+ADD FOREIGN KEY(userId)
+REFERENCES users(id);
+
+Alter Table Users_Reservations
+Add Foreign Key(reservationId)
+References	Reservations(id);
 
 
 COMMIT TRANSACTION;
