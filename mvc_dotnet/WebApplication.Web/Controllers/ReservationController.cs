@@ -15,7 +15,7 @@ namespace WebApplication.Web.Controllers
         private IUserDAL userDAL;
         private IReservationDAO reservationDAO;
 
-        public AccountController(IAuthProvider authProvider, IPetDAO petDAO, IUserDAL userDAL, IReservationDAO reservationDAO)
+        public ReservationController(IAuthProvider authProvider, IPetDAO petDAO, IUserDAL userDAL, IReservationDAO reservationDAO)
         {
             this.authProvider = authProvider;
             this.petDAO = petDAO;
