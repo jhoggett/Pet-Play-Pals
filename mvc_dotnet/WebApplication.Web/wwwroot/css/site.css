@@ -3,7 +3,6 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    
 }
 
 /* Wrapping element */
@@ -36,18 +35,16 @@ body {
     .carousel-caption {
         display: none;
     }
-
-    
 }
 
 /*Here is the start of our css*/
 
-.navbar-inverse{
+.navbar-inverse {
     background-color: royalblue;
     border-color: royalblue;
 }
 
-nav > li{
+nav > li {
     color: white;
 }
 
@@ -70,7 +67,7 @@ nav > li{
     text-align: center;
 }
 
-.site-description{
+.site-description {
     text-align: center;
 }
 
@@ -210,23 +207,28 @@ label {
         background: darkblue;
     }
 
-        #photo {
-        height: auto;
-        width: 100%;
-    }
+#photo {
+    height: auto;
+    width: 100%;
+}
 
-@media screen and (max-width: 850px){
-    .pet-play-header{
+
+
+@media screen and (max-width: 850px) {
+    .pet-play-header {
         font-size: 2em;
     }
+
     .p-header {
         white-space: nowrap;
         overflow: hidden;
         font-size: 1.5em;
     }
-    .Calendar-home-page-header{
+
+    .Calendar-home-page-header {
         font-size: 1.5em;
     }
+
     .home-page-img {
         height: auto;
         width: 100%;
@@ -367,16 +369,12 @@ label {
             background: darkblue;
         }
 
-   label {
-       display: block;
-   }
+    label {
+        display: block;
+    }
 
     #photo {
         height: auto;
         width: 100%;
     }
 }
-
-
-
-
