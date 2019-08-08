@@ -1,0 +1,21 @@
+﻿@model PetsUserViewModel
+@{
+    ViewData["Title"] = "UserHome";
+}
+
+<h1 class="welcomeback">Welcome Back **PERSONS NAME**</h1>
+<h3 class="titleforpets">Your Pets:</h3>
+<div class="calendar">
+
+
+</div>
+
+@foreach (Pets pet in Model.Pets)
+{
+    <div class="petinfo">
+        
+        <img class="userimgforpet" src="@pet.Photo" />
+        <h2 class="usertitleforpets">@pet.Name</h2>
+
+    </div>
+}
