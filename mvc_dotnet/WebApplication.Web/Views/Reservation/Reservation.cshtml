@@ -1,0 +1,25 @@
+﻿@model ReservationUserViewModel
+@{
+    ViewData["Title"] = "Reservation";
+}
+
+<h2>Reservation</h2>
+
+
+    <div >
+
+        @foreach (Reservation reservation in Model.Reservations)
+        {
+            
+            <p>@reservation.Address ></p>
+            <ul>
+                <li>
+                    <span>Start Time:</span>
+                    <span>@reservation.StartTime</span>
+                </li>
+                <li><span><span>End Time:</span></span> <span>@reservation.EndTime</span></li>
+                <li><span>Pet Coming on Play Date:</span> <span>@reservation.PetName</span></li>
+            </ul>
+        }
+
+    </div>
