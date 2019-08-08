@@ -25,6 +25,8 @@ CREATE TABLE users
 	password	varchar(50)	not null,
 	salt		varchar(50)	not null,
 	role		varchar(50)	default('user'),
+	firstName	varchar(50),
+	lastName	varchar(50)
 
 	constraint pk_users primary key (id)
 );

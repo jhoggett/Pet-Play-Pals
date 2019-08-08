@@ -27,6 +27,22 @@ namespace WebApplication.Web.Models
         [Required]
         public string Password { get; set; }
 
+       /// <summary>
+       /// The user's first name (can be null)
+       /// </summary>
+       [MaxLength(50)]
+       [DisplayFormat(ConvertEmptyStringToNull = false)]
+       [Required(AllowEmptyStrings = true)]
+       public string FirstName { get; set; }
+
+        /// <summary>
+        /// The user's last name (can be null)
+        /// </summary>
+        [MaxLength(50)]
+        [DisplayFormat(ConvertEmptyStringToNull = false)]
+        [Required(AllowEmptyStrings = true)]
+        public string LastName { get; set; }
+
         /// <summary>
         /// The user's salt.
         /// </summary>

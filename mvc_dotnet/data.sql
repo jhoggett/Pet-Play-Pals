@@ -1,8 +1,8 @@
-﻿Insert into users (username, password, salt) 
-Values ('sallystevens@gmail.com', 'TKC2qLTgrTA3DfeoCODvmkWxf5c=', 'BedDp8QY3XE='),
-('definatelyEdSheeren@gmail.com', '++bSqEhHJrYoaqF/ItmAzDrRBoo=', 'qbZ25wcBKBI='),
-('rickybobby@yahoo.com', 'kwBulC00cwJuIIOy3RTEbnZ0OC0=', 'iSYnlKMQFDw='),
-('debra@gmail.com', 'b5cHlWa9K9rU2J3V9LmEOx+m0PE=', 'ek65kqNsyCM=')
+﻿Insert into users (username, password, salt, firstName, lastName) 
+Values ('sallystevens@gmail.com', 'TKC2qLTgrTA3DfeoCODvmkWxf5c=', 'BedDp8QY3XE=', 'Sally', 'Stevens'),
+('definatelyEdSheeren@gmail.com', '++bSqEhHJrYoaqF/ItmAzDrRBoo=', 'qbZ25wcBKBI=', 'Edward', 'Sheeren'),
+('rickybobby@yahoo.com', 'kwBulC00cwJuIIOy3RTEbnZ0OC0=', 'iSYnlKMQFDw=', 'Ricky', 'Bobby'),
+('debra@gmail.com', 'b5cHlWa9K9rU2J3V9LmEOx+m0PE=', 'ek65kqNsyCM=', 'Debra', '')
 
 Insert into Pets (userId, name, type, personality, weight, breed, age, photo)
 values			 (4, 'Sammie', 'cat', 'Sassy little kitten who yells a lot', 1, 'tabby', 1, 'http://res.cloudinary.com/petplaypals/image/upload/v1565200199/Sammie_j1ek8q.png'), 
