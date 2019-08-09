@@ -46,30 +46,7 @@ namespace WebApplication.Web.DAL
             }
         }
 
-        /// <summary>
-        /// Deletes the user from the database.
-        /// </summary>
-        /// <param name="user"></param>
-        public void DeleteUser(User user)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM users WHERE id = @id;", conn);
-                    cmd.Parameters.AddWithValue("@id", user.Id);                    
-
-                    cmd.ExecuteNonQuery();
-
-                    return;
-                }
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-        }
+        
 
         /// <summary>
         /// Gets the user from the database.
@@ -171,6 +148,50 @@ namespace WebApplication.Web.DAL
 
                     cmd.ExecuteNonQuery();
                     
+                    return;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateUserFirstName(User user)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE users SET firstName = @firstName WHERE id = @id;", conn);
+                    cmd.Parameters.AddWithValue("@firstName", user.FirstName);
+                    cmd.Parameters.AddWithValue("@id", user.Id);
+
+                    cmd.ExecuteNonQuery();
+
+                    return;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdateUserLastName(User user)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE users SET lastName = @lastName WHERE id = @id;", conn);
+                    cmd.Parameters.AddWithValue("@lastName", user.LastName);
+                    cmd.Parameters.AddWithValue("@id", user.Id);
+
+                    cmd.ExecuteNonQuery();
+
                     return;
                 }
             }

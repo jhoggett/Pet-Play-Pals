@@ -120,13 +120,6 @@ namespace WebApplication.Web.Controllers
         [HttpGet]
         public IActionResult RegisterPet()
         {
-            //var user = authProvider.GetCurrentUser();
-
-            //// This is where I started using VM
-            //PetsUserViewModel vm = new PetsUserViewModel();
-            //vm.User = userDAL.GetUserById(user.Id);
-            
-            //vm.User = userDAL.GetUserById(userId);
             return View();
         }
 
@@ -137,6 +130,26 @@ namespace WebApplication.Web.Controllers
             vm.User = userDAL.GetUserById(user.Id);
             vm.Pet.UserId = vm.User.Id;
             petDAO.AddPet(vm.Pet);
+
+            return RedirectToAction("Index", "Account");
+        }
+
+        [HttpGet]
+        public IActionResult DeletePet()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult DeletePet(PetsUserViewModel vm)
+        {
+            Pets pet = new Pets();
+            var user = authProvider.GetCurrentUser();
+            vm.User = userDAL.GetUserById(user.Id);
+            pet.UserId = vm.User.Id;
+            vm.Pet = petDAO.GetPetById(pet.UserId);
+
+            petDAO.DeletePet(vm.Pet);
 
             return RedirectToAction("Index", "Account");
         }
@@ -167,6 +180,21 @@ namespace WebApplication.Web.Controllers
             authProvider.ChangeEmail(vm.OldUserName, vm.NewUserName);
 
             return RedirectToAction("Index", "Account");            
+        }
+
+        [HttpGet]
+        public IActionResult ChangeName()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ChangeName(ChangeNameViewModel vm)
+        {
+            authProvider.ChangeFirstName(vm.OldFirstName, vm.NewFirstName);
+            authProvider.ChangeLastName(vm.OldLastName, vm.NewLastName);
+
+            return RedirectToAction("Index", "Account");
         }
 
     }

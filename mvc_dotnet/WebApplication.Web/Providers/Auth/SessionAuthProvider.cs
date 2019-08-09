@@ -163,5 +163,45 @@ namespace WebApplication.Web.Providers.Auth
 
             return false;
         }
+
+        public bool ChangeFirstName(string existingName, string newName)
+        {
+            var user = GetCurrentUser();
+
+            // Confirm existing email match
+            if (user != null && user.FirstName == existingName)
+            {
+                // Update current email with new email
+                user.FirstName = newName;
+
+                // Save into the db
+                userDAL.UpdateUserFirstName(user);
+
+                Session.SetString(SessionKey, user.Username);
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool ChangeLastName(string existingName, string newName)
+        {
+            var user = GetCurrentUser();
+
+            // Confirm existing email match
+            if (user != null && user.LastName == existingName)
+            {
+                // Update current email with new email
+                user.LastName = newName;
+
+                // Save into the db
+                userDAL.UpdateUserLastName(user);
+
+                Session.SetString(SessionKey, user.Username);
+                return true;
+            }
+
+            return false;
+        }
     }
 }

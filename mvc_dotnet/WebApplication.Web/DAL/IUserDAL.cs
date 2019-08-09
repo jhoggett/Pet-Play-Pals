@@ -36,9 +36,15 @@ namespace WebApplication.Web.DAL
         void UpdateUserPassword(User user);
 
         /// <summary>
-        /// Deletes a user from the system.
+        /// Updates a user's first name
         /// </summary>
         /// <param name="user"></param>
-        void DeleteUser(User user);
+        void UpdateUserFirstName(User user);
+
+        /// <summary>
+        /// Updates a user's last name
+        /// </summary>
+        /// <param name="user"></param>
+        void UpdateUserLastName(User user);
     }
 }
