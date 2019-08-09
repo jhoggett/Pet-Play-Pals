@@ -44,7 +44,7 @@ namespace WebApplication.Web.DAL
                     cmd.Parameters.AddWithValue("@endTime", reservation.Reservation.EndTime);
                     cmd.Parameters.AddWithValue("@petName", reservation.Reservation.PetName);
                     cmd.Parameters.AddWithValue("@userId", reservation.User.Id);
-                    cmd.Parameters.AddWithValue("@invitedUserId", reservation.InvitedUser);
+                    cmd.Parameters.AddWithValue("@invitedUserId", reservation.InvitedUser.Id);
 
                     int Id = Convert.ToInt32(cmd.ExecuteScalar());
 
