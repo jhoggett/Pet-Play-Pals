@@ -17,8 +17,8 @@ Values ('541 E. 266th St. Euclid Ohio 44132', '160819 12:00:00 PM', '160819 2:00
 ('North Chagrin Reservation', '210819 02:00:00 PM', '210819 05:00:00 PM', 'Hulk'),
 ('Sim''s Park', '230819 11:30:00 AM', '230819 12:30:00 PM', 'Pixie')
 
-Insert into Users_Reservations (userId, reservationId)
-Values (4, 1),	
-(4, 2),
-(3, 3),
-(1, 4) 
+Insert into Users_Reservations (userId, reservationId, status)
+Values (4, 1, 2),	
+(4, 2, 2),
+(3, 3, 2),
+(1, 4, 2) 

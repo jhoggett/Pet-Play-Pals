@@ -158,6 +158,28 @@ namespace WebApplication.Web.DAL
             }
         }
 
+        public void UpdateUserEmail(User user)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE users SET username = @username WHERE id = @id;", conn);
+                    cmd.Parameters.AddWithValue("@username", user.Username);
+                    cmd.Parameters.AddWithValue("@id", user.Id);
+
+                    cmd.ExecuteNonQuery();
+                    
+                    return;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         private User MapRowToUser(SqlDataReader reader)
         {
             return new User()

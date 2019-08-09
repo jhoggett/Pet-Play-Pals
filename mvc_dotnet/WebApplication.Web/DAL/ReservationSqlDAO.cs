@@ -27,11 +27,15 @@ namespace WebApplication.Web.DAL
                     conn.Open();
 
                     string sql = @"
+                        begin tran;
                         Declare @resId int;
                         Insert Into Reservations Values (@address, @startTime, @endTime, @petName); 
                         Select @resId = @@Identity;
-                        Insert into users_reservations(userId, reservationId) values(@userId, @resId);
+                        Insert into users_reservations(userId, reservationId, status) values(@userId, @resId, 2);
+                        Insert into users_reservations(userId, reservationId, status) values(@invitedUserId, @resId, 1);
+                        commit tran;
                         Select @resId;
+                        
                         ";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
@@ -40,6 +44,7 @@ namespace WebApplication.Web.DAL
                     cmd.Parameters.AddWithValue("@endTime", reservation.Reservation.EndTime);
                     cmd.Parameters.AddWithValue("@petName", reservation.Reservation.PetName);
                     cmd.Parameters.AddWithValue("@userId", reservation.User.Id);
+                    cmd.Parameters.AddWithValue("@invitedUserId", reservation.InvitedUser);
 
                     int Id = Convert.ToInt32(cmd.ExecuteScalar());
 

@@ -62,6 +62,7 @@ Create Table Users_Reservations
 (
 	userId			int		not null,
 	reservationId	int		not null,
+	status			int		not null,
 	Constraint pk_Users_Reservations_userId_reservationId primary key (userId, reservationId),
 );
 
