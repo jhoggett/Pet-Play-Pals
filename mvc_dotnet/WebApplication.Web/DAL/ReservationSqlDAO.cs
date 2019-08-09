@@ -35,7 +35,6 @@ namespace WebApplication.Web.DAL
                         Insert into users_reservations(userId, reservationId, status) values(@invitedUserId, @resId, 1);
                         commit tran;
                         Select @resId;
-                        
                         ";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);

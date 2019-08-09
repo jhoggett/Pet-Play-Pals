@@ -71,10 +71,10 @@ namespace WebApplication.Web.Controllers
             var user = authProvider.GetCurrentUser();
 
             // This is where I started using VM
-            PetsUserViewModel vm = new PetsUserViewModel();
+            ReservationUserViewModel vm = new ReservationUserViewModel();
             vm.User = userDAL.GetUser(user.Username);
             vm.Pets = petDAO.GetAllPets(user.Id);
-
+            
             // used to pass in user
             return View(vm);
         }

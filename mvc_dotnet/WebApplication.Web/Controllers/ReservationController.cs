@@ -53,7 +53,8 @@ namespace WebApplication.Web.Controllers
 
             var user = authProvider.GetCurrentUser();
             vm.User = userDAL.GetUserById(user.Id);
-            userDAL.GetUser(vm.InvitedUser.Username);
+            vm.InvitedUser = userDAL.GetUser(vm.InvitedUser.Username);
+
             
             reservationDAO.AddReservation(vm);
 
