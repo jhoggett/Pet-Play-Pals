@@ -2,12 +2,54 @@
 @{
     ViewData["Title"] = "RegisterPet";
 }
-</br>
+<br>
 <a asp-action="Index" asp-controller="Account" class="skipFirstPet">My Profile Page</a>
-</br>
-<h2>Register your Pet</h2>
+<br/>
 
+<body>
 
+    <form asp-action="RegisterPet" asp-controller="Account" class="registerpetcontainer" method="post">
+        <h2 class="loginlable" style="margin-left: 15%; color:white ; padding-left: 10%">Register a Pet</h2>
+        <lable class="loginlable"><label asp-for="Pet.Name">Name: </label></lable>
+        <input type="text" asp-for="Pet.Name" />
+        <br />
+
+        <lable class="loginlable"><label asp-for="Pet.Type">Type: </label></lable>
+        <select name="pet.Type" class="buttonselector" style="margin-left:35px">
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+        </select>
+
+        <lable class="loginlable"><label asp-for="Pet.Breed">Breed:</label></lable>
+        <input type="text" asp-for="Pet.Breed" />
+        <br />
+
+        <lable class="loginlable"><label asp-for="Pet.Age">Age: </label></lable>
+        <input type="number" asp-for="Pet.Age" />
+        <br />
+
+        <lable class="loginlable"> <label asp-for="Pet.Weight">Weight: </label></lable>
+        <input type="number" asp-for="Pet.Weight" />
+        <br />
+
+        <lable class="loginlable"> <label asp-for="Pet.Personality">Personality: </label></lable>
+        <input type="text" asp-for="Pet.Personality" />
+        <br />
+
+        <lable class="loginlable"> <label asp-for="Pet.Photo">Photo: </label></lable>
+        <input type="hidden" asp-for="Pet.Photo" />
+        <br />
+
+        <img id="photo" style="display:none;" />
+
+        <button id="upload_widget" class="cloudinary-button" style="margin-left: 50px">Upload Photo</button>
+
+        <input type="submit" value="Register Pet" class="registerpetllb" />
+
+    </form>
+</body>
+
+<!--
 <form asp-action="RegisterPet" asp-controller="Account" method="post">
     <div class="form-group">
         <label asp-for="Pet.Name">Name: </label>
@@ -49,7 +91,7 @@
     <div>
         <input type="submit" value="Register Pet" class="btn btn-default" />
     </div>
-</form>
+</form>-->
 
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 
