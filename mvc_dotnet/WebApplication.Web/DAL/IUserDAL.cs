@@ -24,7 +24,13 @@ namespace WebApplication.Web.DAL
         void CreateUser(User user);
 
         /// <summary>
-        /// Updates a user.
+        /// Updates a user's email
+        /// </summary>
+        /// <param name="user"></param>
+        void UpdateUserEmail(User user);
+
+        /// <summary>
+        /// Updates a user's password
         /// </summary>
         /// <param name="user"></param>
         void UpdateUserPassword(User user);

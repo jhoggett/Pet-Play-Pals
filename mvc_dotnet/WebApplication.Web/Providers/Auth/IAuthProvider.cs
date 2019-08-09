@@ -41,6 +41,14 @@ namespace WebApplication.Web.Providers.Auth
         bool ChangePassword(string existingPassword, string newPassword);
 
         /// <summary>
+        /// Changes logged in user's existing email
+        /// </summary>
+        /// <param name="existingEmail"></param>
+        /// <param name="newEmail"></param>
+        /// <returns></returns>
+        bool ChangeEmail(string existingEmail, string newEmail);
+
+        /// <summary>
         /// Creates a new user in the system.
         /// </summary>
         /// <param name="username"></param>
