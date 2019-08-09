@@ -142,5 +142,25 @@ namespace WebApplication.Web.Providers.Auth
             return (user != null) && 
                 roles.Any(r => r.ToLower() == user.Role.ToLower());
         }
+
+        public bool ChangeEmail(string existingEmail, string newEmail)
+        {
+            var hashProvider = new HashProvider();
+            var user = GetCurrentUser();
+
+            // Confirm existing email match
+            if (user != null && user.Username == existingEmail)
+            {
+                // Update current email with new email
+                user.Username = newEmail;
+
+                // Save into the db
+                userDAL.UpdateUserEmail(user);
+
+                return true;
+            }
+
+            return false;
+        }
     }
 }

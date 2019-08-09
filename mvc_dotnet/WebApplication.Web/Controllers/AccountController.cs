@@ -152,5 +152,19 @@ namespace WebApplication.Web.Controllers
             return RedirectToAction("Index", "Account");
         }
 
+        [HttpGet]
+        public IActionResult ChangeEmail()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ChangeEmail(ChangeEmailUserViewModel vm)
+        {
+            authProvider.ChangeEmail(vm.OldUserName, vm.NewUserName);
+
+            return RedirectToAction("Index", "Account");
+        }
+
     }
 }
