@@ -49,6 +49,22 @@ namespace WebApplication.Web.Providers.Auth
         bool ChangeEmail(string existingEmail, string newEmail);
 
         /// <summary>
+        /// Change user's first name
+        /// </summary>
+        /// <param name="existingName"></param>
+        /// <param name="newName"></param>
+        /// <returns></returns>
+        bool ChangeFirstName(string existingName, string newName);
+
+        /// <summary>
+        /// Changes user's last name
+        /// </summary>
+        /// <param name="existingName"></param>
+        /// <param name="newName"></param>
+        /// <returns></returns>
+        bool ChangeLastName(string existingName, string newName);
+
+        /// <summary>
         /// Creates a new user in the system.
         /// </summary>
         /// <param name="username"></param>

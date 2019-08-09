@@ -13,6 +13,7 @@
 
         <a asp-controller="Account" asp-action="ChangePassword" class="change-pass-button">Change Password</a>
         <a asp-controller="Account" asp-action="ChangeEmail" class="change-email-button">Change Email</a>
+        <a asp-controller="Account" asp-action="ChangeName" class="change-name-button">Change First Name and/or Last Name</a>
     </div>
 
     <h1 class="yourPets"> Your Pets:<a href="/Account/RegisterPet" class="add-button">Add Pet</a></h1>
@@ -31,7 +32,7 @@
                     <li><span class="feature-name"><span class="feature-name">Weight:</span></span> <span class="feature-name">@pet.Weight lbs</span></li>
                     <li><span class="feature-name">Type:</span> <span class="feature-name">@pet.Type</span></li>
                     <li><span class="feature-name">Personality:</span> <span class="feature-name">@pet.Personality</span></li>
-                </ul>
+                </ul> <a asp-controller="Account" asp-action="DeletePet" class="delete-button">Delete Pet</a>
             }
             <!--<a class="choosePet">Edit?</a>-->
         </div>
