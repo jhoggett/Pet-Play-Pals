@@ -160,10 +160,10 @@ namespace WebApplication.Web.Controllers
 
         [HttpPost]
         public IActionResult ChangeEmail(ChangeEmailUserViewModel vm)
-        {
+        {            
             authProvider.ChangeEmail(vm.OldUserName, vm.NewUserName);
 
-            return RedirectToAction("Index", "Account");
+            return RedirectToAction("Index", "Account");            
         }
 
     }

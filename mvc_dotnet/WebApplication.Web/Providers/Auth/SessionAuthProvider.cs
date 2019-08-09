@@ -157,6 +157,7 @@ namespace WebApplication.Web.Providers.Auth
                 // Save into the db
                 userDAL.UpdateUserEmail(user);
 
+                Session.SetString(SessionKey, user.Username);
                 return true;
             }
 

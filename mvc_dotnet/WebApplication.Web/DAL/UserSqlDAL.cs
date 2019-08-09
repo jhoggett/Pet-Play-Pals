@@ -170,7 +170,7 @@ namespace WebApplication.Web.DAL
                     cmd.Parameters.AddWithValue("@id", user.Id);
 
                     cmd.ExecuteNonQuery();
-
+                    
                     return;
                 }
             }
