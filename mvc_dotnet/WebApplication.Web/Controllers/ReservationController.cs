@@ -37,6 +37,7 @@ namespace WebApplication.Web.Controllers
             ReservationUserViewModel vm = new ReservationUserViewModel();
             vm.User = userDAL.GetUser(user.Username);
             vm.Reservations = reservationDAO.GetAllReservationsForUser(user.Id);
+            vm.Pets = petDAO.GetAllPets(user.Id);
 
             return View(vm);
         }

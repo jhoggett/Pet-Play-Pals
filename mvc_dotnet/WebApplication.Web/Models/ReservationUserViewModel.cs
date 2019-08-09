@@ -8,6 +8,7 @@ namespace WebApplication.Web.Models
 {
     public class ReservationUserViewModel
     {
+        public IList<Pets> Pets { get; set; }
         public IList<Reservation> Reservations { get; set; }
         public User User { get; set; }
         public Reservation Reservation { get; set; }
