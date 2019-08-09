@@ -54,6 +54,7 @@ Create Table Reservations
 	startTime	datetime		not null,
 	endTime		datetime		not null,
 	petName		varchar(50)		not null,
+	description varchar(30)		not null
 
 	constraint pk_Reservations	primary key (id),
 );
@@ -62,6 +63,7 @@ Create Table Users_Reservations
 (
 	userId			int		not null,
 	reservationId	int		not null,
+	status			int		not null,
 	Constraint pk_Users_Reservations_userId_reservationId primary key (userId, reservationId),
 );
 

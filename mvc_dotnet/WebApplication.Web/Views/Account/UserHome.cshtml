@@ -1,14 +1,33 @@
-﻿@model PetsUserViewModel
+﻿@model ReservationUserViewModel
 @{
     ViewData["Title"] = "UserHome";
 }
 
+@*Somehow build something that shows the users pending invites for now*@
+
+
+
+
 <h1 class="welcomeback">Welcome Back **PERSONS NAME**</h1>
 <h3 class="titleforpets">Your Pets:</h3>
 
-<div class="calendar">
+<div>
+    @foreach (Reservation pending in Model.Pending)
+    {
+        /*Send them to the "details" page of this playdate so they can either accept or decline it....*/
+        <p>Pending: <a asp-action="" asp-controller=""> @pending.Description</a></p>
+    }
 
 
+</div>
+
+
+<div>
+
+    @foreach (Reservation accepted in Model.Accepted)
+    {
+        <p>Accepted: @accepted.Description</p>
+    }
 
 </div>
 

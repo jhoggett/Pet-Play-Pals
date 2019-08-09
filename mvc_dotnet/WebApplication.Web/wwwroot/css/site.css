@@ -83,14 +83,15 @@ nav > li {
     text-align: center;
 }
 
+
 .site-description {
     text-align: center;
-    width:50%;
+    width: 50%;
 }
 
-label {
-    display: block;
-}
+    label {
+        display: block;
+    }
 
 .description {
     text-align: center;
@@ -260,6 +261,99 @@ label {
     text-align: center;
 }
 
+/* login css */
+
+.registerpetcontainer {
+    padding-top: 10px;
+    padding-bottom: 800px;
+    margin-top: 50px;
+    margin-left: 30%;
+    height: 300px;
+    width: 40%;
+    background-color: royalblue;
+    box-shadow: 7px 5px 50px grey;
+    border-radius: 25px;
+}
+
+.registercontainer {
+    padding-top: 10px;
+    padding-bottom:550px;
+    margin-top: 50px;
+    margin-left: 30%;
+    height: 300px;
+    width: 40%;
+    background-color: royalblue;
+    box-shadow: 7px 5px 50px grey;
+    border-radius: 25px;
+}
+
+
+.logincontainer {
+    padding-top: 10px;
+    margin-top: 50px;
+    margin-left: 30%;
+    height: 300px;
+    width: 40%;
+    background-color: royalblue;
+    box-shadow: 7px 5px 50px grey;
+    border-radius: 25px;
+}
+
+.loginlable {
+    margin-left: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    color: white;
+}
+
+input {
+    display: block;
+    padding: 5px;
+    margin-left: 9%;
+    margin-bottom: 10px;
+    width: 80%;
+    border-style: none;
+    border-bottom: solid 1px #ccc;
+    background-color: white;
+    font-family: tahoma;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.llb {
+    display: block;
+    margin-top: 20px;
+    margin-left: 40%;
+    background-color: #26B297;
+    border-radius: 9px;
+    padding: 4px 10px;
+    height: 30px;
+    width: 80px;
+    color: white;
+    border-style: none;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.registerpetllb {
+    display: block;
+    margin-top: 20px;
+    margin-left: 30%;
+    background-color: #26B297;
+    border-radius: 9px;
+    padding: 4px 10px;
+    height: 30px;
+    width: 150px;
+    color: white;
+    border-style: none;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
 @media screen and (max-width: 850px) {
     .pet-play-header {
         font-size: 2em;
@@ -270,6 +364,10 @@ label {
         overflow: hidden;
         font-size: 1.5em;
     }
+
+
+
+
 
     .Calendar-home-page-header {
         font-size: 1.5em;
@@ -425,6 +523,34 @@ label {
         width: 100%;
     }
 
+
+    /*login for responsive*/
+
+    .registercontainer {
+        margin: 10%;
+        width: 80%;
+        
+    }
+    
+    .logincontainer {
+
+        margin: 10%;
+        width: 80%;
+        
+    }
+    .registerlable{
+      
+    }
+    .loginlable {
+    }
+
+    input {
+    }
+
+    .llb {
+        margin: 10%;
+        
+    }
    
 }
 

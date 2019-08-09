@@ -27,10 +27,13 @@ namespace WebApplication.Web.DAL
                     conn.Open();
 
                     string sql = @"
+                        begin tran;
                         Declare @resId int;
-                        Insert Into Reservations Values (@address, @startTime, @endTime, @petName); 
+                        Insert Into Reservations Values (@address, @startTime, @endTime, @petName, @description); 
                         Select @resId = @@Identity;
-                        Insert into users_reservations(userId, reservationId) values(@userId, @resId);
+                        Insert into users_reservations(userId, reservationId, status) values(@userId, @resId, 2);
+                        Insert into users_reservations(userId, reservationId, status) values(@invitedUserId, @resId, 1);
+                        commit tran;
                         Select @resId;
                         ";
 
@@ -40,6 +43,8 @@ namespace WebApplication.Web.DAL
                     cmd.Parameters.AddWithValue("@endTime", reservation.Reservation.EndTime);
                     cmd.Parameters.AddWithValue("@petName", reservation.Reservation.PetName);
                     cmd.Parameters.AddWithValue("@userId", reservation.User.Id);
+                    cmd.Parameters.AddWithValue("@description", reservation.Reservation.Description);
+                    cmd.Parameters.AddWithValue("@invitedUserId", reservation.InvitedUser.Id);
 
                     int Id = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -54,6 +59,7 @@ namespace WebApplication.Web.DAL
             }
 
         }
+
 
         public IList<Reservation> GetAllReservationsForUser(int userId)
         {
@@ -82,6 +88,101 @@ namespace WebApplication.Web.DAL
                         reservation.StartTime = Convert.ToDateTime(rdr["startTime"]);
                         reservation.EndTime = Convert.ToDateTime(rdr["endTime"]);
                         reservation.PetName = Convert.ToString(rdr["petName"]);
+                        reservation.Description = Convert.ToString(rdr["description"]);
+
+                        list.Add(reservation);
+
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            return list;
+        }
+
+
+
+        // Pending method
+        public IList<Reservation> GetPendingReservations(int userId)
+        {
+            IList<Reservation> list = new List<Reservation>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = $"SELECT * FROM Reservations AS r JOIN Users_Reservations AS ur on r.id = ur.reservationId where userId = @userId and status = 1";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("@userId", userId);
+
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        Reservation reservation = new Reservation();
+
+                        reservation.ReservationId = Convert.ToInt32(rdr["id"]);
+                        reservation.Address = Convert.ToString(rdr["address"]);
+                        reservation.StartTime = Convert.ToDateTime(rdr["startTime"]);
+                        reservation.EndTime = Convert.ToDateTime(rdr["endTime"]);
+                        reservation.PetName = Convert.ToString(rdr["petName"]);
+                        reservation.Description = Convert.ToString(rdr["description"]);
+
+
+
+                        list.Add(reservation);
+
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            return list;
+        }
+
+
+
+
+        // Accepted method
+        public IList<Reservation> GetAcceptedReservations(int userId)
+        {
+            IList<Reservation> list = new List<Reservation>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = $"SELECT * FROM Reservations AS r JOIN Users_Reservations AS ur on r.id = ur.reservationId where userId = @userId and status = 2";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("@userId", userId);
+
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        Reservation reservation = new Reservation();
+
+                        reservation.ReservationId = Convert.ToInt32(rdr["id"]);
+                        reservation.Address = Convert.ToString(rdr["address"]);
+                        reservation.StartTime = Convert.ToDateTime(rdr["startTime"]);
+                        reservation.EndTime = Convert.ToDateTime(rdr["endTime"]);
+                        reservation.PetName = Convert.ToString(rdr["petName"]);
+                        reservation.Description = Convert.ToString(rdr["description"]);
+
 
 
                         list.Add(reservation);

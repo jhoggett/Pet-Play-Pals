@@ -15,13 +15,15 @@ namespace WebApplication.Web.Controllers
         private readonly IAuthProvider authProvider;
         private IPetDAO petDAO;
         private IUserDAL userDAL;
-        
+        private IReservationDAO reservationDAO;
 
-        public AccountController(IAuthProvider authProvider, IPetDAO petDAO, IUserDAL userDAL)
+
+        public AccountController(IAuthProvider authProvider, IPetDAO petDAO, IUserDAL userDAL, IReservationDAO reservationDAO)
         {
             this.authProvider = authProvider;
             this.petDAO = petDAO;
             this.userDAL = userDAL;
+            this.reservationDAO = reservationDAO;
         }   
         
         //[AuthorizationFilter] // actions can be filtered to only those that are logged in
@@ -70,12 +72,13 @@ namespace WebApplication.Web.Controllers
         {
             var user = authProvider.GetCurrentUser();
 
-            // This is where I started using VM
-            PetsUserViewModel vm = new PetsUserViewModel();
+            
+            ReservationUserViewModel vm = new ReservationUserViewModel();
             vm.User = userDAL.GetUser(user.Username);
             vm.Pets = petDAO.GetAllPets(user.Id);
-
-            // used to pass in user
+            vm.Accepted = reservationDAO.GetAcceptedReservations(user.Id);
+            vm.Pending = reservationDAO.GetPendingReservations(user.Id);
+            
             return View(vm);
         }
 

@@ -41,5 +41,25 @@ namespace WebApplication.Web.Controllers
 
             return View(vm);
         }
+
+
+        [HttpPost]
+        public IActionResult Reservation(ReservationUserViewModel vm)
+        {
+            if(vm.InvitedUser.Username == null)
+            {
+                return RedirectToAction("Reservation", "Reservation");
+            }
+
+            var user = authProvider.GetCurrentUser();
+            vm.User = userDAL.GetUserById(user.Id);
+            vm.InvitedUser = userDAL.GetUser(vm.InvitedUser.Username);
+
+            
+            reservationDAO.AddReservation(vm);
+
+
+             return RedirectToAction("UserHome", "Account");
+        }
     }
 }
