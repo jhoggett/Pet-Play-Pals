@@ -54,6 +54,7 @@ Create Table Reservations
 	startTime	datetime		not null,
 	endTime		datetime		not null,
 	petName		varchar(50)		not null,
+	description varchar(30)		not null
 
 	constraint pk_Reservations	primary key (id),
 );
