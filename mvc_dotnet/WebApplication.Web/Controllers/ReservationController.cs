@@ -9,7 +9,7 @@ using WebApplication.Web.Providers.Auth;
 
 namespace WebApplication.Web.Controllers
 {
-    public class Reservationcontroller : Controller
+    public class ReservationController : Controller
     {
         private readonly IAuthProvider authProvider;
         private IPetDAO petDAO;

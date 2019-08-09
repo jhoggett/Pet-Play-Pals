@@ -48,11 +48,11 @@ nav > li {
     color: white;
 }
 
-.imagesonhome {
+/*.imagesonhome {
     position: relative;
     top: 0;
     left: 0;
-}
+}*/
 
 .home-page-img {
     height: auto;
@@ -83,14 +83,19 @@ nav > li {
     text-align: center;
 }
 
-.site-description {
-    text-align: center;
-    width:50%;
+.theThreeP{
+    background-color:lightgrey;
+   
 }
 
-label {
-    display: block;
+.site-description {
+    text-align: center;
+    width: 50%;
 }
+
+    label {
+        display: block;
+    }
 
 .description {
     text-align: center;
