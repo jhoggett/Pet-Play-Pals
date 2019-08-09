@@ -106,7 +106,7 @@ namespace WebApplication.Web.DAL
 
 
         // Pending method
-        public IList<Reservation> GetPendingReservations(int userId)
+        public IList<Reservation> GetAllPendingReservations(int userId)
         {
             IList<Reservation> list = new List<Reservation>();
 
@@ -154,7 +154,7 @@ namespace WebApplication.Web.DAL
 
 
         // Accepted method
-        public IList<Reservation> GetAcceptedReservations(int userId)
+        public IList<Reservation> GetAllAcceptedReservations(int userId)
         {
             IList<Reservation> list = new List<Reservation>();
 
@@ -196,6 +196,49 @@ namespace WebApplication.Web.DAL
                 throw ex;
             }
             return list;
+        }
+
+        public Reservation GetPendingReservation(int userId, int reservationId)
+        {
+
+            Reservation reservation = new Reservation();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = $"SELECT * FROM Reservations AS r JOIN Users_Reservations AS ur on r.id = ur.reservationId where userId = @userId and @reservationId and status = 1";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@reservationId", reservationId);
+
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        reservation = new Reservation();
+
+                        reservation.ReservationId = Convert.ToInt32(rdr["id"]);
+                        reservation.Address = Convert.ToString(rdr["address"]);
+                        reservation.StartTime = Convert.ToDateTime(rdr["startTime"]);
+                        reservation.EndTime = Convert.ToDateTime(rdr["endTime"]);
+                        reservation.PetName = Convert.ToString(rdr["petName"]);
+                        reservation.Description = Convert.ToString(rdr["description"]);
+
+
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            return reservation;
         }
 
     }

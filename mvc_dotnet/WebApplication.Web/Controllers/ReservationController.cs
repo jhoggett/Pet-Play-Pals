@@ -33,7 +33,7 @@ namespace WebApplication.Web.Controllers
                 return RedirectToAction("Login", "Account");
             }
             var user = authProvider.GetCurrentUser();
-            
+
             ReservationUserViewModel vm = new ReservationUserViewModel();
             vm.User = userDAL.GetUser(user.Username);
             vm.Reservations = reservationDAO.GetAllReservationsForUser(user.Id);
@@ -46,7 +46,7 @@ namespace WebApplication.Web.Controllers
         [HttpPost]
         public IActionResult Reservation(ReservationUserViewModel vm)
         {
-            if(vm.InvitedUser.Username == null)
+            if (vm.InvitedUser.Username == null)
             {
                 return RedirectToAction("Reservation", "Reservation");
             }
@@ -55,11 +55,29 @@ namespace WebApplication.Web.Controllers
             vm.User = userDAL.GetUserById(user.Id);
             vm.InvitedUser = userDAL.GetUser(vm.InvitedUser.Username);
 
-            
+
             reservationDAO.AddReservation(vm);
 
 
-             return RedirectToAction("UserHome", "Account");
+            return RedirectToAction("UserHome", "Account");
+        }
+
+        [HttpGet]
+        public IActionResult PendingReservation()
+        {
+
+            ReservationUserViewModel vm = new ReservationUserViewModel();
+
+            var user = authProvider.GetCurrentUser();
+            vm.User = userDAL.GetUserById(user.Id);
+
+            // got to figure out the reservationid to pass over
+
+            vm.User = userDAL.GetUser(user.Username);
+            vm.Pets = petDAO.GetAllPets(user.Id);
+            //vm.Reservation = reservationDAO.GetPendingReservation(user.Id, reservation.Id);
+
+            return View(vm);
         }
     }
 }
