@@ -1,16 +1,16 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
+    
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 1em;
-    padding-right: 1em;
-    color: royalblue;
+    
+    
 }
 
 /* Carousel */
@@ -40,13 +40,12 @@ body {
 /*Here is the start of our css*/
 
 .navbar-inverse {
-    background-color: royalblue;
-    border-color: royalblue;
+    background-color: rgba(0, 0, 0,0.5);
 }
-
 nav > li {
     color: white;
 }
+
 
 .imagesonhome {
     position: relative;
@@ -54,22 +53,49 @@ nav > li {
     left: 0;
 }
 
+
 .home-page-img {
     height: auto;
     width: 100%;
     position: relative;
     top: 0;
     left: 0;
+   
+}
+/*.wholeHome{
+    background-image: rgba(217,174,134, 5);
+}*/
+
+.table{
+    width: 50%;
+    margin-left:15%;
 }
 
 .home-page-logo {
     height: auto;
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 25%;
     left: 0%;
 }
 
+.pawHome {
+    height: auto;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top:10%;
+}
+
+.theThreeP {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 115%;
+    left: 3%;
+    color:white;
+}
 
 .pet-play-header {
     text-align: center;
@@ -83,11 +109,18 @@ nav > li {
     text-align: center;
 }
 
-
-.site-description {
-    text-align: center;
-    width: 50%;
+.wholeHome {
+    background-color: rgba(217,174,134, 5);
 }
+
+/*
+.site-description {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 0%;
+}*/
 
     label {
         display: block;
@@ -270,19 +303,19 @@ nav > li {
     margin-left: 30%;
     height: 300px;
     width: 40%;
-    background-color: royalblue;
+    background-color: rgba(21, 166,157,5);
     box-shadow: 7px 5px 50px grey;
     border-radius: 25px;
 }
 
 .registercontainer {
     padding-top: 10px;
-    padding-bottom:550px;
+    padding-bottom: 550px;
     margin-top: 50px;
     margin-left: 30%;
     height: 300px;
     width: 40%;
-    background-color: royalblue;
+    background-color: rgba(21, 166,157,5);
     box-shadow: 7px 5px 50px grey;
     border-radius: 25px;
 }
@@ -294,7 +327,7 @@ nav > li {
     margin-left: 30%;
     height: 300px;
     width: 40%;
-    background-color: royalblue;
+    background-color: rgba(21, 166,157,5);
     box-shadow: 7px 5px 50px grey;
     border-radius: 25px;
 }
@@ -325,7 +358,7 @@ input {
     display: block;
     margin-top: 20px;
     margin-left: 40%;
-    background-color: #26B297;
+    background-color: rgba(111, 178,214,5);
     border-radius: 9px;
     padding: 4px 10px;
     height: 30px;
@@ -365,7 +398,7 @@ input {
         font-size: 1.5em;
     }
 
-
+    
 
 
 
@@ -526,6 +559,11 @@ input {
 
     /*login for responsive*/
 
+    .registerpetcontainer {
+        margin: 10%;
+        width: 80%;
+    }
+
     .registercontainer {
         margin: 10%;
         width: 80%;
@@ -551,6 +589,32 @@ input {
         margin: 10%;
         
     }
-   
+    /*
+    
+    .row {
+
+        height: auto;
+        width: 50%;
+        position: absolute;
+        top: -130%;
+        left: 25%;
+    }
+
+    .pawHome {
+        height: auto;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .table {
+        height: auto;
+        width: 100%;
+        position: absolute;
+        top: -20%;
+        left: 0%;
+    }*/
+
 }
 
