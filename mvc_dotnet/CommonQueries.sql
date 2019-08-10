@@ -57,7 +57,8 @@ Query to get All a SINGLE user pets
 select * from Pets where userId = /*ENTER DESIRED ID HERE*/
 
 /*=============================================================
-Query
+Query to update the status to accept invite
 ==============================================================*/
 
+Update Users_Reservations set status = 2 where userId = 2 and reservationId = 5
 

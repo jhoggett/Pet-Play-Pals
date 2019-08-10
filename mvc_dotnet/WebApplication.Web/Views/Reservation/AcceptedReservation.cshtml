@@ -1,0 +1,29 @@
+﻿@model ReservationUserViewModel
+@{
+    ViewData["Title"] = "AcceptedReservation";
+}
+
+<h2>AcceptedReservation</h2>
+
+<div>
+    Event: @Model.Reservation.Description
+</div>
+<div>
+    Location: @Model.Reservation.Address
+</div>
+<div>
+    Start Time: @Model.Reservation.StartTime
+</div>
+<div>
+    End Time:  @Model.Reservation.EndTime
+</div>
+<div>
+    Pet Coming With Me: @Model.Reservation.PetName
+</div>
+<form asp-action="DeclineReservation" asp-controller="Reservation" method="post">
+    <div>
+        <input type="hidden" name="ReservationId" asp-for="@Model.Reservation.ReservationId" />
+        <input type="hidden" name="UserId" asp-for="@Model.User.Id" />
+        <input id="decline" type="submit" value="No Longer Going" class="btn btn-default" />
+    </div>
+</form>

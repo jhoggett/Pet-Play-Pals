@@ -26,7 +26,7 @@
 
     @foreach (Reservation accepted in Model.Accepted)
     {
-        <p>Accepted: @accepted.Description</p>
+        <p>Accepted: <a asp-action="AcceptedReservation" asp-controller="Reservation" asp-route-id="@accepted.ReservationId">@accepted.Description</a></p>
     }
 
 </div>

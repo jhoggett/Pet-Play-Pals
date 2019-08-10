@@ -81,10 +81,28 @@ namespace WebApplication.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult PendingReservation(ReservationUserViewModel vm)
+        public IActionResult AcceptReservation(int ReservationId, int UserId)
         {
 
-           
+            reservationDAO.AcceptPendingReservation(UserId, ReservationId);
+            return RedirectToAction("UserHome", "Account");
+        }
+
+
+        [HttpPost]
+        public IActionResult DeclineReservation(int ReservationId, int UserId)
+        {
+
+            reservationDAO.DeclinePendingReservation(UserId, ReservationId);
+            return RedirectToAction("UserHome", "Account");
+        }
+
+
+        [HttpGet]
+        public IActionResult AcceptedReservation(int id)
+        {
+
+            ReservationUserViewModel vm = new ReservationUserViewModel();
 
             var user = authProvider.GetCurrentUser();
             vm.User = userDAL.GetUserById(user.Id);
@@ -93,7 +111,7 @@ namespace WebApplication.Web.Controllers
 
             vm.User = userDAL.GetUser(user.Username);
             vm.Pets = petDAO.GetAllPets(user.Id);
-            //vm.Reservation = reservationDAO.GetPendingReservation(user.Id, id);
+            vm.Reservation = reservationDAO.GetAcceptedReservation(user.Id, id);
 
             return View(vm);
         }
