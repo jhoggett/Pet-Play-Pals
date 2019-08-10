@@ -209,7 +209,7 @@ namespace WebApplication.Web.DAL
                 {
                     conn.Open();
 
-                    string sql = $"SELECT * FROM Reservations AS r JOIN Users_Reservations AS ur on r.id = ur.reservationId where userId = @userId and @reservationId and status = 1";
+                    string sql = $"SELECT * FROM Reservations AS r JOIN Users_Reservations AS ur on r.id = ur.reservationId where userId = @userId and @reservationId = reservationId and status = 1";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
@@ -228,7 +228,6 @@ namespace WebApplication.Web.DAL
                         reservation.EndTime = Convert.ToDateTime(rdr["endTime"]);
                         reservation.PetName = Convert.ToString(rdr["petName"]);
                         reservation.Description = Convert.ToString(rdr["description"]);
-
 
                     }
 

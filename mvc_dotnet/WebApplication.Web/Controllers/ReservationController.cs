@@ -63,10 +63,28 @@ namespace WebApplication.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult PendingReservation()
+        public IActionResult PendingReservation(int id)
         {
 
             ReservationUserViewModel vm = new ReservationUserViewModel();
+
+            var user = authProvider.GetCurrentUser();
+            vm.User = userDAL.GetUserById(user.Id);
+            
+            // got to figure out the reservationid to pass over
+
+            vm.User = userDAL.GetUser(user.Username);
+            vm.Pets = petDAO.GetAllPets(user.Id);
+            vm.Reservation = reservationDAO.GetPendingReservation(user.Id, id);
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult PendingReservation(ReservationUserViewModel vm)
+        {
+
+           
 
             var user = authProvider.GetCurrentUser();
             vm.User = userDAL.GetUserById(user.Id);
@@ -75,7 +93,7 @@ namespace WebApplication.Web.Controllers
 
             vm.User = userDAL.GetUser(user.Username);
             vm.Pets = petDAO.GetAllPets(user.Id);
-            //vm.Reservation = reservationDAO.GetPendingReservation(user.Id, reservation.Id);
+            //vm.Reservation = reservationDAO.GetPendingReservation(user.Id, id);
 
             return View(vm);
         }

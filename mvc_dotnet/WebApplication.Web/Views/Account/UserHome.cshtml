@@ -15,7 +15,7 @@
     @foreach (Reservation pending in Model.Pending)
     {
         /*Send them to the "details" page of this playdate so they can either accept or decline it....*/
-        <p>Pending: <a asp-action="" asp-controller=""> @pending.Description</a></p>
+        <p>Pending: <a asp-action="PendingReservation" asp-controller="Reservation" asp-route-id="@pending.ReservationId"> @pending.Description</a></p>
     }
 
 
