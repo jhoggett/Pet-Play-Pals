@@ -3,13 +3,12 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 0px;
     padding-bottom: 20px;
-    
+    background-color: white;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    
     
 }
 
@@ -154,7 +153,7 @@ nav > li {
     padding-left: 25%;
     font-size: 30px;
 }
-
+/*
 .card {
     float: left;
     width: 40em;
@@ -164,7 +163,7 @@ nav > li {
     border: 2px solid lightblue;
     border-radius: 5px;
     
-}
+}*/
 
 .imgForPet {
     display: block;
@@ -384,6 +383,104 @@ input {
     font-weight: bold;
     display: inline-block;
     cursor: pointer;
+}
+
+
+
+.all {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.wholecard {
+    height: 10%;
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+    background: #FFF;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.card {
+    width: 200px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+}
+
+    .card:first-of-type {
+        margin-right: 25px;
+    }
+
+    .card:hover {
+        margin-top: -10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+.userhomebanner {
+    height: 100px;
+    width: 100%;
+    padding-top: 30px;
+    background-color: #FAFAFA;
+    background-size: cover;
+    background-position: center;
+}
+
+.card:first-of-type .userhomebanner {
+    background-color:lightgrey;
+}
+
+.userhomeavatar {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
+    background-color: #F1F1F1;
+    border-radius: 100%;
+}
+
+
+
+.userhomepetname, userhomepetinfo, i {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+}
+
+.userhomepetname {
+    margin-top: 45px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #212121;
+}
+
+.userhomepetinfo {
+    display: block;
+    padding: 5px 0px;
+    font-size: 14px;
+    color: #9E9E9E;
+    text-decoration: none;
+}
+
+userhomepetinfo:hover {
+    background-color: #FAFAFA;
+    color: inherit;
+}
+
+.userhomepetrating {
+    margin-top: 10px;
+    padding: 15px 0px;
+    background-color: #FAFAFA;
 }
 
 
