@@ -5,13 +5,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Web.Models;
+using WebApplication.Web.Providers.Auth;
 
 namespace WebApplication.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IAuthProvider authProvider;
+        public HomeController(IAuthProvider authProvider)
+        {
+            this.authProvider = authProvider;
+        }
+
+
         public IActionResult Index()
-        {            
+        {
+            if (authProvider.IsLoggedIn == true)
+            {
+                return RedirectToAction("UserHome", "Account");
+            }
             return View();
         }
 
