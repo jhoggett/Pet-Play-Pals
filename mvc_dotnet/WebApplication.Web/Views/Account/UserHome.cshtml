@@ -7,7 +7,7 @@
 
 
 
-
+<br /><br />
 <h1 class="welcomeback">Welcome Back **PERSONS NAME**</h1>
 <h3 class="titleforpets">Your Pets:</h3>
 
@@ -31,13 +31,12 @@
 
 </div>
 
-@foreach (Pets pet in Model.Pets)
-{
 
+<div class="all">
+   
+        @foreach (Pets pet in Model.Pets)
+        {
 
-
-    <div class="all">
-        <div class="wholecard">
             <div class="card">
                 <div class="userhomebanner">
                     <div class="userhomeavatar" style="background-image: url(@pet.Photo)"></div>
@@ -53,20 +52,12 @@
                     button for whatever
                 </ul>
             </div>
-        </div>
-    </div>
-    <br />
+            <br />
+
+        }
+   
+</div>
 
 
-
-    <!--
-        <div class="petinfo">
-
-            <img class="userimgforpet" src="@pet.Photo" />
-            <h2 class="usertitleforpets">@pet.Name</h2>
-
-
-        </div>-->
-}
 
 
