@@ -17,7 +17,7 @@
     </div>
 
     <h1 class="yourPets"> Your Pets:<a href="/Account/RegisterPet" class="add-button">Add Pet</a></h1>
-
+    <br /><br /><br /><br />
     <div class="all">
         <div class="container">
             <div class="row">
@@ -37,13 +37,14 @@
                             <a class="userhomepetinfo"> personality: @pet.Personality</a>
 
                             <ul class="userhomepetrating">
-                                button for whatever
+                                <a asp-controller="Account" asp-action="DeletePet" asp-route-id="@pet.Id" method="get" class="delete-button">Delete Pet</a>
+                                <br />
+                                <a asp-controller="Account" asp-action="UpdatePet" asp-route-id="@pet.Id" method="get" class="update-pet-button">Update Pet Info</a>
                             </ul>
                         </div>
                         <br />
                     </div>
-                     <a asp-controller="Account" asp-action="DeletePet" asp-route-id="@pet.Id" method="get" class="delete-button">Delete Pet</a>
-                    <a asp-controller="Account" asp-action="UpdatePet" asp-route-id="@pet.Id" method="get" class="update-pet-button">Update Pet Info</a>
+                    
                 }
                 <!--<a class="choosePet">Edit?</a>-->
             </div>
