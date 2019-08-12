@@ -19,5 +19,7 @@ namespace WebApplication.Web.DAL
         /// </summary>
         /// <param name="user"></param>
         void DeletePet(Pets pet);
+
+        void UpdatePet(Pets pet);
     }
 }

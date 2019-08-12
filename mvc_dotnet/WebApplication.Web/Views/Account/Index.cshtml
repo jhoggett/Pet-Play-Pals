@@ -31,8 +31,10 @@
                     </li>
                     <li><span class="feature-name"><span class="feature-name">Weight:</span></span> <span class="feature-name">@pet.Weight lbs</span></li>
                     <li><span class="feature-name">Type:</span> <span class="feature-name">@pet.Type</span></li>
+                    <li><span class="feature-name">Breed:</span> <span class="feature-name">@pet.Breed</span></li>
                     <li><span class="feature-name">Personality:</span> <span class="feature-name">@pet.Personality</span></li>
-                </ul> <a asp-controller="Account" asp-action="DeletePet" class="delete-button">Delete Pet</a>
+                </ul> <a asp-controller="Account" asp-action="DeletePet" asp-route-id="@pet.Id" method="get" class="delete-button">Delete Pet</a>
+                <a asp-controller="Account" asp-action="UpdatePet" asp-route-id="@pet.Id" method="get" class="update-pet-button">Update Pet Info</a>
             }
             <!--<a class="choosePet">Edit?</a>-->
         </div>

@@ -135,21 +135,41 @@ namespace WebApplication.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult DeletePet()
+        public IActionResult DeletePet(int id)
         {
-            return View();
+            Pets pet = new Pets();
+            pet = petDAO.GetPetById(id);
+            return View(pet);
         }
 
         [HttpPost]
-        public IActionResult DeletePet(PetsUserViewModel vm)
+        public IActionResult DeletePet(Pets pet)
+        {
+            //Pets pet = new Pets();
+            //var user = authProvider.GetCurrentUser();
+            //vm.User = userDAL.GetUserById(user.Id);
+            //pet.UserId = vm.User.Id;
+            //vm.Pet = petDAO.GetPetById(pet.Id);
+
+            //petDAO.DeletePet(vm.Pet);
+            petDAO.DeletePet(pet);
+
+            return RedirectToAction("Index", "Account");
+        }
+
+        [HttpGet]
+        public IActionResult UpdatePet(int id)
         {
             Pets pet = new Pets();
-            var user = authProvider.GetCurrentUser();
-            vm.User = userDAL.GetUserById(user.Id);
-            pet.UserId = vm.User.Id;
-            vm.Pet = petDAO.GetPetById(pet.UserId);
+            pet = petDAO.GetPetById(id);
 
-            petDAO.DeletePet(vm.Pet);
+            return View(pet);
+        }
+
+        [HttpPost]
+        public IActionResult UpdatePet(Pets pet)
+        {
+            petDAO.UpdatePet(pet);
 
             return RedirectToAction("Index", "Account");
         }
