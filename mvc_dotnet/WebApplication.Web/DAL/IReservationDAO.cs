@@ -13,10 +13,16 @@ namespace WebApplication.Web.DAL
 
         int AddReservation(ReservationUserViewModel reservation);
 
-        IList<Reservation> GetAcceptedReservations(int userId);
+        IList<Reservation> GetAllAcceptedReservations(int userId);
 
-        IList<Reservation> GetPendingReservations(int userId);
+        IList<Reservation> GetAllPendingReservations(int userId);
 
+        Reservation GetPendingReservation(int userId, int reservationId);
 
+        void AcceptPendingReservation(int userId, int reservationId);
+
+        void DeclinePendingReservation(int userId, int reservationId);
+
+        Reservation GetAcceptedReservation(int userId, int reservationId);
     }
 }

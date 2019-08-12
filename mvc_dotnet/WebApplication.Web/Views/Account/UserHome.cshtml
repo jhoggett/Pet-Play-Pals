@@ -15,7 +15,7 @@
     @foreach (Reservation pending in Model.Pending)
     {
         /*Send them to the "details" page of this playdate so they can either accept or decline it....*/
-        <p>Pending: <a asp-action="" asp-controller=""> @pending.Description</a></p>
+        <p>Pending: <a asp-action="PendingReservation" asp-controller="Reservation" asp-route-id="@pending.ReservationId"> @pending.Description</a></p>
     }
 
 
@@ -26,18 +26,47 @@
 
     @foreach (Reservation accepted in Model.Accepted)
     {
-        <p>Accepted: @accepted.Description</p>
+        <p>Accepted: <a asp-action="AcceptedReservation" asp-controller="Reservation" asp-route-id="@accepted.ReservationId">@accepted.Description</a></p>
     }
 
 </div>
 
 @foreach (Pets pet in Model.Pets)
 {
-    <div class="petinfo">
-        
-        <img class="userimgforpet" src="@pet.Photo" />
-       <h2 class="usertitleforpets">@pet.Name</h2>
-        
 
+
+
+    <div class="all">
+        <div class="wholecard">
+            <div class="card">
+                <div class="userhomebanner">
+                    <div class="userhomeavatar" style="background-image: url(@pet.Photo)"></div>
+                </div>
+                <h3 class="userhomepetname">@pet.Name</h3>
+                <a class="userhomepetinfo"> Age: @pet.Age</a>
+                <a class="userhomepetinfo"> Weight: @pet.Weight</a>
+                <a class="userhomepetinfo"> Type: @pet.Type</a>
+                <a class="userhomepetinfo"> Breed: @pet.Breed</a>
+                <a class="userhomepetinfo"> personality: @pet.Personality</a>
+
+                <ul class="userhomepetrating">
+                    button for whatever
+                </ul>
+            </div>
+        </div>
     </div>
+    <br />
+
+
+
+    <!--
+        <div class="petinfo">
+
+            <img class="userimgforpet" src="@pet.Photo" />
+            <h2 class="usertitleforpets">@pet.Name</h2>
+
+
+        </div>-->
 }
+
+
