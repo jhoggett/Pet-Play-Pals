@@ -15,11 +15,11 @@
         <input type="text" asp-for="@Model.Name" />
         <br />
 
-       @*<label asp-for="@Model.Type">Type: </label>
-        <select name="@Model.Type" class="buttonselector" style="margin-left:35px">
+       <label asp-for="@Model.Type">Type: </label>
+        <select asp-for="Type" class="buttonselector" style="margin-left:35px">
             <option value="cat">Cat</option>
             <option value="dog">Dog</option>
-        </select>*@
+        </select>
 
        <label asp-for="@Model.Breed">Breed:</label>
         <input type="text" asp-for="@Model.Breed" />
@@ -37,11 +37,11 @@
         <input type="text" asp-for="@Model.Personality" />
         <br />
 
-        <label asp-for="@Model.Photo">Photo: </label>
-        <input type="image" asp-for="@Model.Photo" />
+        @*<label asp-for="@Model.Photo">Photo: </label>*@
+        <input type="hidden" asp-for="Photo" />
         <br />
 
-        <img id="photo" style="display:none;" />
+        <img id="photoimg" src="@Model.Photo" />
 
         <button id="upload_widget" class="cloudinary-button" style="margin-left: 50px">Upload Photo</button>
 
@@ -60,11 +60,11 @@
     }, (error, result) => {
         if (!error && result && result.event === "success") {
             console.log('Done! Here is the image info: ', result.info);
-            const photoURL = document.getElementById("Pet_Photo");
+            const photoURL = document.getElementById("Photo");
             photoURL.value = result.info.url;
-            const photo = document.getElementById("photo");
+            const photo = document.getElementById("photoimg");
             photo.src = result.info.url;
-            photo.style.display = "block";
+            //photo.style.display = "block";
         }
     }
     )
