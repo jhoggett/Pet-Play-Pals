@@ -10,28 +10,39 @@
 </div>
 <div class="wholeuserhome" style="background-color: rgba(217,174,134, 5)">
 
-    
+
     <br /><br />
     <div class="container" style="padding-left:25%">
         <div class="row">
+            <h2 class="PendingInvitesUserPage">Pending Invites!</h2>
+            <div class="col-sm-4">
+                @foreach (Reservation pending in Model.Pending)
+                { /*Send them to the "details" page of this playdate so they can either accept or decline it....*/
+                    <div class="card">
+                        <p><a asp-action="PendingReservation" asp-controller="Reservation" asp-route-id="@pending.ReservationId"> @pending.Description</a></p>
+                        <p>@pending.Address</p>
+                        <p>@pending.StartTime</p>
+                    </div>
+                    <br />
+                }
 
 
-            @foreach (Reservation pending in Model.Pending)
-            { /*Send them to the "details" page of this playdate so they can either accept or decline it....*/
-                <div class="col-sm-4">
-                    <p>Pending: <a asp-action="PendingReservation" asp-controller="Reservation" asp-route-id="@pending.ReservationId"> @pending.Description</a></p>
-                </div>
-            }
+            </div>
+            <h2 class="AcceptedInvitesUserPage">Accepted Invites!</h2>
+            <div class="col-sm-4">
+                @foreach (Reservation accepted in Model.Accepted)
+                {
+                    <div class="card">
+                        <p><a asp-action="AcceptedReservation" asp-controller="Reservation" asp-route-id="@accepted.ReservationId">@accepted.Description</a></p>
+                        <p>@accepted.Address</p>
+                        <p>@accepted.StartTime</p>
+                    </div>
+                    <br />
+                }
 
-            @foreach (Reservation accepted in Model.Accepted)
-            {
-                <div class="col-sm-4">
-                    <p>Accepted: <a asp-action="AcceptedReservation" asp-controller="Reservation" asp-route-id="@accepted.ReservationId">@accepted.Description</a></p>
-                </div>
-            }
+            </div>
 
         </div>
-
     </div>
 
     <h3 class="titleforpets">Your Pets:</h3><br />
