@@ -97,17 +97,18 @@ namespace WebApplication.Web.DAL
             return list;
         }
 
-        public Pets GetPetById(int userId)
+        public Pets GetPetById(int id)
         {
-            Pets pet = null;
+            Pets pet = new Pets();
+            pet.Id = id;
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Pets WHERE userId = @userId;", conn);
-                    cmd.Parameters.AddWithValue("@userId", pet.UserId);
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Pets WHERE id = @id;", conn);
+                    cmd.Parameters.AddWithValue("@id", pet.Id);
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -144,13 +145,40 @@ namespace WebApplication.Web.DAL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE * FROM Pets WHERE id = @id;", conn);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Pets WHERE id = @id;", conn);
                     cmd.Parameters.AddWithValue("@id", pet.Id);
 
                     cmd.ExecuteNonQuery();
 
                     return;
                 }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdatePet(Pets pet)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("Update pets Set name = @name, type = @type, personality = @personality, weight = @weight, breed = @breed, age = @age, photo = @photo Where id = @id;", conn);
+                    cmd.Parameters.AddWithValue("@id", pet.Id);
+                    cmd.Parameters.AddWithValue("@name", pet.Name);
+                    cmd.Parameters.AddWithValue("@type", pet.Type);
+                    cmd.Parameters.AddWithValue("@personality", pet.Personality);
+                    cmd.Parameters.AddWithValue("@weight", pet.Weight);
+                    cmd.Parameters.AddWithValue("@breed", pet.Breed);
+                    cmd.Parameters.AddWithValue("@age", pet.Age);
+                    cmd.Parameters.AddWithValue("@photo", pet.Photo);
+
+                    cmd.ExecuteNonQuery();
+                    return;
+                }                
             }
             catch (SqlException ex)
             {
