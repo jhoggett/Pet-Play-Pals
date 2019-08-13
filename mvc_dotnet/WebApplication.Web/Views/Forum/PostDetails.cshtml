@@ -1,0 +1,26 @@
+﻿@model ForumPost
+@{
+    ViewData["Title"] = "PostDetails";
+}
+
+<h2>PostDetails</h2>
+
+<table class="table table-striped">
+
+    <tbody>
+        <tr>
+            <td>User: @Model.User</td>
+        </tr>
+        <tr>
+            <td>Date Posted: @Model.Post_Date</td>
+        </tr>
+        <tr>
+            <td>Subject: @Model.Subject</td>
+        </tr>
+        <tr>
+            <td>Message: @Model.Message</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2><a asp-action="Index" asp-controller="Forum">Back to the Forum!</a></h2>

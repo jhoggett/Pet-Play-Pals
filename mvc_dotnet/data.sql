@@ -29,3 +29,7 @@ Values (4, 1, 2),
 (2, 2, 1),
 (4, 3, 1),
 (2, 4, 1)
+
+Insert into Forum_Post (username, subject, message, postDate)
+Values ('Marcus Aurelious', 'The North Olmsted Dog Park was great!', 'Had a play date with my friend this weekend at the North Olmstead Dog Park. Wow what a great park for a play date. The park was clean, not too crowded, and also had a water fountain for the pups. Anyone who is thinking of meeting for a play date at this park should be excited!', '230819 11:30:00 AM'),
+('Michael', 'The Rocky River Dog Park was great!', 'Had a play date with my friend this weekend at the Rocky River Dog Park. Wow what a great park for a play date. The park was clean, and not too crowded. Anyone who is thinking of meeting for a play date at this park should be excited!', '231019 11:30:00 AM')

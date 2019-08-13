@@ -1,0 +1,33 @@
+﻿@model IList<ForumPost>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Welcome to Pet Play Pals Forums!</h1>
+@*Maybe have some kind of an image or combo of this header text inside the top banner img...*@
+
+
+<h2><a asp-controller="Forum" asp-action="AddPost">Add a Post!</a></h2>
+
+<section>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th><b>Subject</b></th>
+                <th><b>Posted By</b></th>
+                <th><b>Date Posted</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ForumPost post in Model)
+            {
+                <tr>
+                    @*Anchor this subject text to send them to the "Details" page of the clicked post...*@
+                    <td><a asp-action="PostDetails" asp-controller="Forum" asp-route-id="@post.Id">@post.Subject</a></td>
+                    <td>@post.User</td>
+                    <td>@post.Post_Date</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
