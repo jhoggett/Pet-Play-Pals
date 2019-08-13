@@ -4,6 +4,7 @@ body {
     padding-top: 0px;
     padding-bottom: 20px;
     background-color: white;
+   
 }
 
 /* Wrapping element */
@@ -53,21 +54,24 @@ nav > li {
 }
 
 
+
 .home-page-img {
     height: auto;
     width: 100%;
     position: relative;
     top: 0;
     left: 0;
-   
 }
 /*.wholeHome{
     background-image: rgba(217,174,134, 5);
 }*/
 
-.table{
+
+
+.table {
     width: 50%;
-    margin-left:15%;
+   
+    margin-left: 13%;
 }
 
 .home-page-logo {
@@ -112,6 +116,7 @@ nav > li {
     background-color: rgba(217,174,134, 5);
 }
 
+
 /*
 .site-description {
     height: auto;
@@ -132,6 +137,12 @@ nav > li {
     padding-bottom: 15px;
 }
 
+.user-username {
+    margin-left: 0%;
+    
+    text-align: center;
+}
+
 .welcomeuser {
     padding: 10px;
     font-size: 230%;
@@ -150,7 +161,7 @@ nav > li {
 
 .yourPets {
     position: absolute;
-    padding-left: 25%;
+    padding-left: 30%;
     font-size: 30px;
 }
 /*
@@ -278,14 +289,19 @@ nav > li {
 }
 
 .titleforpets {
-    padding-left: 25%;
-    padding-top: 25%;
+    padding-left: 5%;
+    padding-top: 5%;
+    
     
 }
 
+
+
+
 .welcomeback {
     
-    font-size: 230%;
+
+    font-size: 200%;
     text-align: center;
 }
 .usertitleforpets {
@@ -386,19 +402,15 @@ input {
 }
 
 
-
 .all {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-}
-
-.wholecard {
     height: 10%;
     width: 10%;
     justify-content: center;
     align-items: center;
-    background: #FFF;
+    
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -414,6 +426,7 @@ input {
     text-align: center;
     -webkit-transition: .1s ease-in-out;
     transition: .1s ease-in-out;
+    
 }
 
     .card:first-of-type {
@@ -560,18 +573,6 @@ userhomepetinfo:hover {
         font-size: 30px;
     }
 
-    .card {
-        float: left;
-        width: 15em;
-        margin: 20px 2px;
-        padding: 15px 25px 0 25px;
-        text-align: center;
-        background: white;
-        background-clip: padding-box;
-        border: 2px solid lightblue;
-        border-color: rgba(black, .1);
-        border-radius: 5px;
-    }
 
     .imgForPet {
         display: block;
