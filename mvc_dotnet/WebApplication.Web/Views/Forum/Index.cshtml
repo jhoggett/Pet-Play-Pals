@@ -3,31 +3,46 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Welcome to Pet Play Pals Forums!</h1>
+
 @*Maybe have some kind of an image or combo of this header text inside the top banner img...*@
 
-
-<h2><a asp-controller="Forum" asp-action="AddPost">Add a Post!</a></h2>
-
-<section>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th><b>Subject</b></th>
-                <th><b>Posted By</b></th>
-                <th><b>Date Posted</b></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (ForumPost post in Model)
-            {
+<img class="home-page-img" src="~/images/forumhome (1).png" />
+<h1 class="welcomeforum" style="width:100%">Welcome to Pet Play Pals Forums!</h1>
+<button class="llbforum"><a asp-controller="Forum" asp-action="AddPost">Add a Post!</a></button>
+@foreach (ForumPost post in Model)
+{
+    <div class="forumcard">
+        <header>
+            <h1>@post.User</h1>
+            <h3></h3>
+        </header>
+        <ul>
+            <li><strong>Subject: </strong><a asp-action="PostDetails" asp-controller="Forum" asp-route-id="@post.Id">@post.Subject</a></li>
+            <li><strong>Date Posted:</strong>@post.Post_Date</li>
+        </ul>
+    </div>
+}
+<!--
+    <section>
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                    @*Anchor this subject text to send them to the "Details" page of the clicked post...*@
-                    <td><a asp-action="PostDetails" asp-controller="Forum" asp-route-id="@post.Id">@post.Subject</a></td>
-                    <td>@post.User</td>
-                    <td>@post.Post_Date</td>
+                    <th><b>Subject</b></th>
+                    <th><b>Posted By</b></th>
+                    <th><b>Date Posted</b></th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</section>
+            </thead>
+            <tbody>
+                @foreach (ForumPost post in Model)
+                {
+                    <tr>
+                        @*Anchor this subject text to send them to the "Details" page of the clicked post...*@
+                        <td><a asp-action="PostDetails" asp-controller="Forum" asp-route-id="@post.Id">@post.Subject</a></td>
+                        <td>@post.User</td>
+                        <td>@post.Post_Date</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </section>
+    -->

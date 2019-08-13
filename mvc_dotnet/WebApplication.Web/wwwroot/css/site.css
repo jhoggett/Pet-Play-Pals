@@ -299,6 +299,10 @@ body {
     
 }
 
+.welcomeforum {
+    font-size: 300%;
+    text-align: center;
+}
 
 
 .welcomeback {
@@ -339,6 +343,7 @@ body {
 
 .logincontainer {
     padding-top: 10px;
+    padding-bottom: 30%;
     margin-top: 50px;
     margin-left: 30%;
     height: 300px;
@@ -370,20 +375,37 @@ input {
     border-radius: 5px;
 }
 
-.llb {
+.llbforum {
     display: block;
-    margin-top: 20px;
-    margin-left: 40%;
+    margin-top: 0px;
+    margin-left: 43%;
     background-color: rgba(111, 178,214,5);
     border-radius: 9px;
     padding: 4px 10px;
     height: 30px;
-    width: 80px;
+    width: 130px;
+    color: white;
+    border-style: none;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.llb {
+    display: block;
+    margin-top: 0px;
+    margin-left: 13%;
+    background-color: rgba(111, 178,214,5);
+    border-radius: 9px;
+    padding: 4px 10px;
+    height: 30px;
+    width: 130px;
     color: white;
     border-style: none;
     font-weight: bold;
     display: inline-block;
     cursor: pointer;
+    white-space:nowrap;
 }
 
 .registerpetllb {
@@ -416,7 +438,22 @@ input {
     -moz-osx-font-smoothing: grayscale;
 }
 
-
+.forumcard {
+    box-shadow: 10px 20px 30px rgba(0,0,0, 0.2);
+    background: #ffffff;
+    border-radius: 10px;
+    margin: 2rem;
+    max-width: 400px;
+    min-height: 200px;
+    padding: 2.5rem;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    cursor:pointer;
+    margin-left:auto;
+    margin-right:auto;
+}
 
 .card {
     width: 200px;
@@ -427,7 +464,6 @@ input {
     text-align: center;
     -webkit-transition: .1s ease-in-out;
     transition: .1s ease-in-out;
-    
 }
 
     .card:first-of-type {
@@ -678,12 +714,11 @@ userhomepetinfo:hover {
         width: 80%;
         
     }
-    
-    .logincontainer {
 
+    .logincontainer {
         margin: 10%;
         width: 80%;
-        
+        padding-bottom: 330px;
     }
     .registerlable{
       
@@ -695,8 +730,10 @@ userhomepetinfo:hover {
     }
 
     .llb {
-        margin: 10%;
-        
+        margin-left: 3%;
+        margin-top: 1%;
+        display:inline-table;
+        white-space:nowrap;
     }
     /*
     
