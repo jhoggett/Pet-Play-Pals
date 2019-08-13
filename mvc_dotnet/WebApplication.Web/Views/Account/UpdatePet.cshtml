@@ -9,31 +9,31 @@
 
 <body>
 
-    <form asp-action="UpdatePet" asp-controller="Account" class="update-pet-container" method="post">
+    <form asp-action="UpdatePet" asp-controller="Account" class="registerpetcontainer" method="post">
         <h2 class="loginlable" style="margin-left: 15%; color:white ; padding-left: 10%">Register a Pet</h2>
-        <label asp-for="@Model.Name">Name: </label>
+        <label asp-for="@Model.Name" class="loginlable">Name: </label>
         <input type="text" asp-for="@Model.Name" />
         <br />
 
-       <label asp-for="@Model.Type">Type: </label>
+       <label asp-for="@Model.Type" class="loginlable">Type: </label>
         <select asp-for="Type" class="buttonselector" style="margin-left:35px">
             <option value="cat">Cat</option>
             <option value="dog">Dog</option>
         </select>
 
-       <label asp-for="@Model.Breed">Breed:</label>
+       <label asp-for="@Model.Breed" class="loginlable">Breed:</label>
         <input type="text" asp-for="@Model.Breed" />
         <br />
 
-        <label asp-for="@Model.Age">Age: </label>
+        <label asp-for="@Model.Age" class="loginlable">Age: </label>
         <input type="number" asp-for="@Model.Age" />
         <br />
 
-        <label asp-for="@Model.Weight">Weight: </label>
+        <label asp-for="@Model.Weight" class="loginlable">Weight: </label>
         <input type="number" asp-for="@Model.Weight" />
         <br />
 
-        <label asp-for="@Model.Personality">Personality: </label>
+        <label asp-for="@Model.Personality" class="loginlable">Personality: </label>
         <input type="text" asp-for="@Model.Personality" />
         <br />
 
@@ -45,7 +45,7 @@
 
         <button id="upload_widget" class="cloudinary-button" style="margin-left: 50px">Upload Photo</button>
 
-        <input type="submit" value="Update Pet" class="update-pet" />
+        <input type="submit" value="Update Pet" class="registerpetllb" />
 
     </form>
 </body>
