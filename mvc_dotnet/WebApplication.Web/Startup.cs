@@ -43,8 +43,14 @@ namespace WebApplication.Web
                 options.Cookie.HttpOnly = true;
             });
 
+            string hosts = Configuration["AllowedHosts"];
+
             // Connection String
             string connectionString = Configuration.GetConnectionString("Database");
+            //string connectionString = Configuration["ConnectionStrings:default"];
+
+            string level = Configuration["Logging:LogLevel:Default"];
+
 
             // Dependency Injection
             // For Authentication

@@ -324,6 +324,18 @@ body {
     border-radius: 25px;
 }
 
+.makeaPlayDateContainer {
+    padding-top: 10px;
+    padding-bottom: 550px;
+    margin-top: 50px;
+    margin-left: 30%;
+    height: 300px;
+    width: 40%;
+    background-color: rgba(21, 166,157,5);
+    box-shadow: 7px 5px 50px grey;
+    border-radius: 25px;
+}
+
 .registercontainer {
     padding-top: 10px;
     padding-bottom: 550px;
@@ -402,6 +414,21 @@ input {
     cursor: pointer;
 }
 
+.makeaplaydatellb {
+    display: block;
+    margin-top: 20px;
+    margin-left: 20%;
+    background-color: #26B297;
+    border-radius: 9px;
+    padding: 4px 10px;
+    height: 30px;
+    width: 150px;
+    color: white;
+    border-style: none;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
 
 .all {
     margin: 0px;
@@ -684,6 +711,12 @@ userhomepetinfo:hover {
         margin: 10%;
         width: 80%;
         
+    }
+
+    .makeaPlayDateContainer {
+        margin: 10%;
+        width: 80%;
+       
     }
     .registerlable{
       
