@@ -67,6 +67,19 @@ Create Table Users_Reservations
 	Constraint pk_Users_Reservations_userId_reservationId primary key (userId, reservationId),
 );
 
+
+Create Table Forum_Post
+(
+	id		int		identity(1,1),
+	username		varchar(50)		not null,
+	subject		varchar(50)		not null,
+	message		varchar(1000)		not null,
+	postDate	datetime		not null,
+	Constraint	pk_Forum_Post primary key (id)
+);
+
+
+
 ALTER TABLE Users_Reservations
 ADD FOREIGN KEY(userId)
 REFERENCES users(id);

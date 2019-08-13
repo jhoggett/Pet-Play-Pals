@@ -9,13 +9,15 @@
     <br /><br /><br />
     <form asp-controller="account" asp-action="login" class="logincontainer" method="post">
         <h2 class="loginlable" style="margin-left: 25%; color:white ; padding-left: 15%">Login</h2>
+
         <lable class="loginlable"><label asp-for="Email"></label></lable>
         <input type="email" asp-for="Email" />
         <br />
         <lable class="loginlable"><label asp-for="Password"></label></lable>
         <input type="password" asp-for="Password" />
+        <br />
+        <br />
         <input type="submit" value="Login" class="llb" />
-
         <a asp-controller="Account" asp-action="Register" class="llb">Register Here!</a>
     </form>
 </body>
