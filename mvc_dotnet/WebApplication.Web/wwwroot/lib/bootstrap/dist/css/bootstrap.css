@@ -1401,11 +1401,18 @@ html {
 }
 
 body {
+<<<<<<< HEAD
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-color: white;
+=======
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
     color: #333;
     background-color: #fff;
+>>>>>>> 2d2117480db8baebaf1994e1a1060d26fe2c9253
 }
 
 input,
