@@ -40,12 +40,16 @@ body {
 /*Here is the start of our css*/
 
 .navbar-inverse {
-    background-color: rgba(0, 0, 0,0.5);
+    background-color: transparent;
+    /*background-color: rgba(0, 0, 0,0.5);*/
 }
-nav > li {
-    color: white;
-}
+    .navbar-inverse .navbar-nav > li > a {
+        color: black;
+    }
 
+.navbar-collapse{
+    background-color: lightgrey;
+}
 
 .imagesonhome {
     position: relative;
@@ -189,13 +193,13 @@ nav > li {
     width: 35%;
     height: auto;
     border-radius: 10px;
-    background: royalblue;
+    background: rgba(158, 178, 214,5);
     outline: none;
     position: absolute;
     cursor: pointer;
     line-height: 45px;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 100;
     color: white;
     margin: 20px;
@@ -203,7 +207,7 @@ nav > li {
 }
 
     .add-button:hover {
-        background: darkblue;
+        background: rgba(104, 132, 175,5);
     }
 
 
@@ -297,10 +301,7 @@ nav > li {
 
 
 
-
 .welcomeback {
-    
-
     font-size: 200%;
     text-align: center;
 }
@@ -442,13 +443,14 @@ input {
     height: 100px;
     width: 100%;
     padding-top: 30px;
-    background-color: #FAFAFA;
+    background-color: transparent;
     background-size: cover;
     background-position: center;
+    border-bottom: 1px solid black;
 }
 
 .card:first-of-type .userhomebanner {
-    background-color:lightgrey;
+    background-color:transparent;
 }
 
 .userhomeavatar {
@@ -459,6 +461,15 @@ input {
     background-position: center;
     background-color: #F1F1F1;
     border-radius: 100%;
+}
+
+.editbuttons{
+    white-space:nowrap;
+    font-size:115%;
+    text-align:center;
+    margin-left:5%;
+    margin-right:5%;
+    
 }
 
 
@@ -625,16 +636,16 @@ userhomepetinfo:hover {
     }
 
     .add-button {
-        width: 75%;
+        width: 35%;
         height: auto;
-        border-radius: 50%;
-        background: royalblue;
+        border-radius: 10px;
+        background: rgba(158, 178, 214,5);
         outline: none;
         position: absolute;
         cursor: pointer;
         line-height: 45px;
         text-align: center;
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 100;
         color: white;
         margin: 20px;
@@ -642,7 +653,7 @@ userhomepetinfo:hover {
     }
 
         .add-button:hover {
-            background: darkblue;
+            background: rgba(104, 132, 175,5);
         }
 
     label {
