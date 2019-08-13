@@ -10,12 +10,28 @@
     <div class="user-info">
         <p class="user-username">Email: <strong>@Model.User.Username</strong></p>
         <p class="user-username">First Name: <strong>@Model.User.FirstName</strong> Last Name: <strong>@Model.User.LastName</strong></p>
-
-        <a asp-controller="Account" asp-action="ChangePassword" class="change-pass-button">Change Password</a>
-        <a asp-controller="Account" asp-action="ChangeEmail" class="change-email-button">Change Email</a>
-        <a asp-controller="Account" asp-action="ChangeName" class="change-name-button">Change First Name and/or Last Name</a>
+        <br /><br />
+        <div class="editbuttons">
+            <div class="container" style="margin-left:5%">
+                <div class="row">
+                    <div class="col-sm-3 " style="background-color:rgba(4, 160,133, 5); padding: 10px; border-radius:10px; margin-right:1%; margin-bottom:1%; cursor:pointer" onmouseover="this.style.background = 'rgba(10, 114,94, 5)';" onmouseout="this.style.background = 'rgba(4, 160,133, 5)';">
+                        <a asp-controller="Account" asp-action="ChangePassword" class="change-pass-button" style="color:white">Change Password</a>
+                    </div>
+                   
+                    <div class="col-sm-3 "style="background-color:rgba(4, 160,133, 5); padding: 10px; border-radius:10px;margin-right:1%;margin-bottom:1%; cursor:pointer" onmouseover="this.style.background = 'rgba(10, 114,94, 5)';" onmouseout="this.style.background = 'rgba(4, 160,133, 5)';">
+                        <a asp-controller="Account" asp-action="ChangeEmail" class="change-email-button" style="color:white">Change Email</a>
+                    </div>
+                   
+                    <div class="col-sm-3 "style="background-color:rgba(4, 160,133, 5); padding: 10px; border-radius:10px;cursor:pointer" onmouseover="this.style.background = 'rgba(10, 114,94, 5)';" onmouseout="this.style.background = 'rgba(4, 160,133, 5)';">
+                        <a asp-controller="Account" asp-action="ChangeName" class="change-name-button" style="color:white">Change First Name and/or Last Name</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
     </div>
-
+    <br /><br /><br />
     <h1 class="yourPets"> Your Pets:<a href="/Account/RegisterPet" class="add-button">Add Pet</a></h1>
     <br /><br /><br /><br />
     <div class="all">
