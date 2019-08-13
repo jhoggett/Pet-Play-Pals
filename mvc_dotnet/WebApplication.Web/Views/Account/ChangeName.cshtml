@@ -8,16 +8,16 @@
 
 <p>If you did not enter a first/last name enter one in the blank box, otherwise replace your current name with a new one.</p>
 
-<form asp-controller="account" asp-action="changename" method="post">
+<form asp-controller="account" asp-action="changename" class="registercontainer" method="post">
     <div class="form-group">
-        <label asp-for="FirstName">First Name</label>
+        <label asp-for="FirstName" class="loginlable">First Name</label>
         <input type="text" asp-for="FirstName" />
         <span asp-validation-for="FirstName"></span>
     </div>
     <div class="form-group">
-        <label asp-for="LastName">Last Name</label>
+        <label asp-for="LastName" class="loginlable">Last Name</label>
         <input type="text" asp-for="LastName" />
         <span asp-validation-for="LastName"></span>
     </div>
-    <input type="submit" value="Change Name" class="btn btn-default" />
+    <input type="submit" value="Change Name" class="registerpetllb" />
 </form>
