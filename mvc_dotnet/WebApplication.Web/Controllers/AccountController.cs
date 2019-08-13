@@ -203,16 +203,19 @@ namespace WebApplication.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult ChangeName()
+        public IActionResult ChangeName(int id)
         {
-            return View();
+            User user = new User();
+            user = userDAL.GetUserById(id);
+
+            return View(user);
         }
 
         [HttpPost]
-        public IActionResult ChangeName(ChangeNameViewModel vm)
+        public IActionResult ChangeName(User user)
         {
-            authProvider.ChangeFirstName(vm.OldFirstName, vm.NewFirstName);
-            authProvider.ChangeLastName(vm.OldLastName, vm.NewLastName);
+            userDAL.UpdateUserFirstName(user);
+            userDAL.UpdateUserLastName(user);
 
             return RedirectToAction("Index", "Account");
         }
