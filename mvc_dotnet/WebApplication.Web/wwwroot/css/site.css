@@ -1,16 +1,16 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
+    background-color: white;
+   
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 1em;
-    padding-right: 1em;
-    color: royalblue;
+    padding-top: 50px;
 }
 
 /* Carousel */
@@ -40,20 +40,69 @@ body {
 /*Here is the start of our css*/
 
 .navbar-inverse {
-    background-color: royalblue;
-    border-color: royalblue;
+    background-color: transparent;
+    /*background-color: rgba(0, 0, 0,0.5);*/
+}
+    .navbar-inverse .navbar-nav > li > a {
+        color: black;
+    }
+
+.navbar-collapse{
+    background-color: lightgrey;
 }
 
-nav > li {
-    color: white;
+.imagesonhome {
+    position: relative;
+    top: 0;
+    left: 0;
 }
+
 
 
 .home-page-img {
     height: auto;
     width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+/*.wholeHome{
+    background-image: rgba(217,174,134, 5);
+}*/
+
+
+
+.table {
+    width: 50%;
+   
+    margin-left: 13%;
 }
 
+.home-page-logo {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 0%;
+}
+
+.pawHome {
+    height: auto;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top:10%;
+}
+
+.theThreeP {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 115%;
+    left: 3%;
+    color:white;
+}
 
 .pet-play-header {
     text-align: center;
@@ -67,19 +116,35 @@ nav > li {
     text-align: center;
 }
 
-.site-description {
-    text-align: center;
+.wholeHome {
+    background-color: rgba(217,174,134, 5);
 }
 
-label {
-    display: block;
-}
+
+/*
+.site-description {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 0%;
+}*/
+
+    label {
+        display: block;
+    }
 
 .description {
     text-align: center;
     width: 90%;
     padding-left: 15%;
     padding-bottom: 15px;
+}
+
+.user-username {
+    margin-left: 0%;
+    
+    text-align: center;
 }
 
 .welcomeuser {
@@ -94,46 +159,47 @@ label {
     margin: 50px auto;
     padding-left: 25%;
     padding-right: 25%;
+    
     overflow: hidden;
 }
 
 .yourPets {
     position: absolute;
-    padding-left: 25%;
+    padding-left: 30%;
     font-size: 30px;
 }
-
+/*
 .card {
     float: left;
     width: 40em;
     margin: 20px 2px;
-    padding: 15px 25px 0px 25px;
+    padding: 15px;
     text-align: center;
-    background: white;
-    background-clip: padding-box;
     border: 2px solid lightblue;
-    border-color: rgba(black, .1);
     border-radius: 5px;
-}
+    
+}*/
 
 .imgForPet {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 98%;
+    padding-bottom: 5%;
 }
 
+
 .add-button {
-    width: 75%;
+    width: 35%;
     height: auto;
-    border-radius: 50%;
-    background: royalblue;
+    border-radius: 10px;
+    background: rgba(158, 178, 214,5);
     outline: none;
     position: absolute;
     cursor: pointer;
     line-height: 45px;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 100;
     color: white;
     margin: 20px;
@@ -141,7 +207,7 @@ label {
 }
 
     .add-button:hover {
-        background: darkblue;
+        background: rgba(104, 132, 175,5);
     }
 
 
@@ -212,6 +278,234 @@ label {
     width: 100%;
 }
 
+.userimgforpet {
+    width: 100%;
+    height: auto;
+}
+
+.petinfo {
+    margin-left: 25%;
+    margin-top: 2%;
+    border: 2px solid lightblue;
+    padding: 10px;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.titleforpets {
+    padding-left: 5%;
+    padding-top: 5%;
+    
+    
+}
+
+
+
+.welcomeback {
+    font-size: 200%;
+    text-align: center;
+}
+.usertitleforpets {
+    padding: 15px;
+    text-align: center;
+}
+
+/* login css */
+
+.registerpetcontainer {
+    padding-top: 10px;
+    padding-bottom: 800px;
+    margin-top: 50px;
+    margin-left: 30%;
+    height: 300px;
+    width: 40%;
+    background-color: rgba(21, 166,157,5);
+    box-shadow: 7px 5px 50px grey;
+    border-radius: 25px;
+}
+
+.registercontainer {
+    padding-top: 10px;
+    padding-bottom: 550px;
+    margin-top: 50px;
+    margin-left: 30%;
+    height: 300px;
+    width: 40%;
+    background-color: rgba(21, 166,157,5);
+    box-shadow: 7px 5px 50px grey;
+    border-radius: 25px;
+}
+
+
+.logincontainer {
+    padding-top: 10px;
+    margin-top: 50px;
+    margin-left: 30%;
+    height: 300px;
+    width: 40%;
+    background-color: rgba(21, 166,157,5);
+    box-shadow: 7px 5px 50px grey;
+    border-radius: 25px;
+}
+
+.loginlable {
+    margin-left: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    color: white;
+}
+
+input {
+    display: block;
+    padding: 5px;
+    margin-left: 9%;
+    margin-bottom: 10px;
+    width: 80%;
+    border-style: none;
+    border-bottom: solid 1px #ccc;
+    background-color: white;
+    font-family: tahoma;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.llb {
+    display: block;
+    margin-top: 20px;
+    margin-left: 40%;
+    background-color: rgba(111, 178,214,5);
+    border-radius: 9px;
+    padding: 4px 10px;
+    height: 30px;
+    width: 80px;
+    color: white;
+    border-style: none;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.registerpetllb {
+    display: block;
+    margin-top: 20px;
+    margin-left: 30%;
+    background-color: #26B297;
+    border-radius: 9px;
+    padding: 4px 10px;
+    height: 30px;
+    width: 150px;
+    color: white;
+    border-style: none;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+.all {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    height: 10%;
+    width: 10%;
+    justify-content: center;
+    align-items: center;
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.card {
+    width: 200px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-align: center;
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+    
+}
+
+    .card:first-of-type {
+        margin-right: 25px;
+    }
+
+    .card:hover {
+        margin-top: -10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+.userhomebanner {
+    height: 100px;
+    width: 100%;
+    padding-top: 30px;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid black;
+}
+
+.card:first-of-type .userhomebanner {
+    background-color:transparent;
+}
+
+.userhomeavatar {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    background-size: cover;
+    background-position: center;
+    background-color: #F1F1F1;
+    border-radius: 100%;
+}
+
+.editbuttons{
+    white-space:nowrap;
+    font-size:115%;
+    text-align:center;
+    margin-left:5%;
+    margin-right:5%;
+    
+}
+
+
+
+.userhomepetname, userhomepetinfo, i {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
+}
+
+.userhomepetname {
+    margin-top: 45px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #212121;
+}
+
+.userhomepetinfo {
+    display: block;
+    padding: 5px 0px;
+    font-size: 14px;
+    color: #9E9E9E;
+    text-decoration: none;
+}
+
+userhomepetinfo:hover {
+    background-color: #FAFAFA;
+    color: inherit;
+}
+
+.userhomepetrating {
+    margin-top: 10px;
+    padding: 15px 0px;
+    background-color: #FAFAFA;
+}
 
 
 @media screen and (max-width: 850px) {
@@ -225,6 +519,10 @@ label {
         font-size: 1.5em;
     }
 
+    
+
+
+
     .Calendar-home-page-header {
         font-size: 1.5em;
     }
@@ -233,6 +531,7 @@ label {
         height: auto;
         width: 100%;
     }
+
 
     .profileHeader {
         font-size: 1.5em;
@@ -285,18 +584,6 @@ label {
         font-size: 30px;
     }
 
-    .card {
-        float: left;
-        width: 15em;
-        margin: 20px 2px;
-        padding: 15px 25px 0 25px;
-        text-align: center;
-        background: white;
-        background-clip: padding-box;
-        border: 2px solid lightblue;
-        border-color: rgba(black, .1);
-        border-radius: 5px;
-    }
 
     .imgForPet {
         display: block;
@@ -349,16 +636,16 @@ label {
     }
 
     .add-button {
-        width: 75%;
+        width: 35%;
         height: auto;
-        border-radius: 50%;
-        background: royalblue;
+        border-radius: 10px;
+        background: rgba(158, 178, 214,5);
         outline: none;
         position: absolute;
         cursor: pointer;
         line-height: 45px;
         text-align: center;
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 100;
         color: white;
         margin: 20px;
@@ -366,7 +653,7 @@ label {
     }
 
         .add-button:hover {
-            background: darkblue;
+            background: rgba(104, 132, 175,5);
         }
 
     label {
@@ -377,4 +664,66 @@ label {
         height: auto;
         width: 100%;
     }
+
+
+    /*login for responsive*/
+
+    .registerpetcontainer {
+        margin: 10%;
+        width: 80%;
+    }
+
+    .registercontainer {
+        margin: 10%;
+        width: 80%;
+        
+    }
+    
+    .logincontainer {
+
+        margin: 10%;
+        width: 80%;
+        
+    }
+    .registerlable{
+      
+    }
+    .loginlable {
+    }
+
+    input {
+    }
+
+    .llb {
+        margin: 10%;
+        
+    }
+    /*
+    
+    .row {
+
+        height: auto;
+        width: 50%;
+        position: absolute;
+        top: -130%;
+        left: 25%;
+    }
+
+    .pawHome {
+        height: auto;
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .table {
+        height: auto;
+        width: 100%;
+        position: absolute;
+        top: -20%;
+        left: 0%;
+    }*/
+
 }
+

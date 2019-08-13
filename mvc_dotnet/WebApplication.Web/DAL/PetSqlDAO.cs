@@ -11,7 +11,7 @@ namespace WebApplication.Web.DAL
     {
         private readonly string connectionString;
 
-        public PetSqlDAO (string connectionString)
+        public PetSqlDAO(string connectionString)
         {
             this.connectionString = connectionString;
         }
@@ -85,7 +85,7 @@ namespace WebApplication.Web.DAL
                         pet.Age = Convert.ToInt32(rdr["age"]);
 
                         list.Add(pet);
-                    
+
                     }
 
                 }
@@ -97,5 +97,94 @@ namespace WebApplication.Web.DAL
             return list;
         }
 
+        public Pets GetPetById(int id)
+        {
+            Pets pet = new Pets();
+            pet.Id = id;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Pets WHERE id = @id;", conn);
+                    cmd.Parameters.AddWithValue("@id", pet.Id);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        pet.Id = Convert.ToInt32(reader["id"]);
+                        pet.Name = Convert.ToString(reader["name"]);
+                        pet.Personality = Convert.ToString(reader["personality"]);
+                        pet.Photo = Convert.ToString(reader["photo"]);
+                        pet.Type = Convert.ToString(reader["type"]);
+                        pet.UserId = Convert.ToInt32(reader["userId"]);
+                        pet.Weight = Convert.ToInt32(reader["weight"]);
+                        pet.Breed = Convert.ToString(reader["breed"]);
+                        pet.Age = Convert.ToInt32(reader["age"]);
+                    }
+                }
+
+                return pet;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Deletes the user from the database.
+        /// </summary>
+        /// <param name="pet"></param>
+        public void DeletePet(Pets pet)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM Pets WHERE id = @id;", conn);
+                    cmd.Parameters.AddWithValue("@id", pet.Id);
+
+                    cmd.ExecuteNonQuery();
+
+                    return;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void UpdatePet(Pets pet)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("Update pets Set name = @name, type = @type, personality = @personality, weight = @weight, breed = @breed, age = @age, photo = @photo Where id = @id;", conn);
+                    cmd.Parameters.AddWithValue("@id", pet.Id);
+                    cmd.Parameters.AddWithValue("@name", pet.Name);
+                    cmd.Parameters.AddWithValue("@type", pet.Type);
+                    cmd.Parameters.AddWithValue("@personality", pet.Personality);
+                    cmd.Parameters.AddWithValue("@weight", pet.Weight);
+                    cmd.Parameters.AddWithValue("@breed", pet.Breed);
+                    cmd.Parameters.AddWithValue("@age", pet.Age);
+                    cmd.Parameters.AddWithValue("@photo", pet.Photo);
+
+                    cmd.ExecuteNonQuery();
+                    return;
+                }                
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
+

@@ -6,34 +6,65 @@
 
 <div>
 
-    <h1 class="welcomeuser">WELCOME @Model.User.Username! </h1>
-    <p class="description">
-        is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry's standard dummy
-        text ever since the 1500s, when an unknown printer took
-        a galley of type and scrambled it to make a type specimen book.
-    </p>
-    <h1 class="yourPets"> Your Pets:<a href="/Account/RegisterPet" class="add-button">Add Pet</a></h1>
-
-    <div class="allPets">
-        <div class="card">
-
-            @foreach (Pets pet in Model.Pets)
-            {
-                <img class="imgForPet" src="@pet.Photo" />
-                <p class="petName">@pet.Name <span class="plan-unit">@pet.Type</span></p>
-                <ul class="features">
-                    <li class="feature">
-                        <span class="feature-name">Age:</span>
-                        <span class="feature-name">@pet.Age</span>
-                    </li>
-                    <li class="feature"><span class="feature-name"><span class="feature-name">Weight:</span></span> <span class="feature-name">@pet.Weight lbs</span></li>
-                    <li class="feature"><span class="feature-name">Type:</span> <span class="feature-name">@pet.Type</span></li>
-                    <li class="feature"><span class="feature-name">Personality:</span> <span class="feature-name">@pet.Personality</span></li>
-                </ul>
-            }
-            <!--<a class="choosePet">Edit?</a>-->
+    <h1 class="welcomeuser">Edit Profile</h1>
+    <div class="user-info">
+        <p class="user-username">Email: <strong>@Model.User.Username</strong></p>
+        <p class="user-username">First Name: <strong>@Model.User.FirstName</strong> Last Name: <strong>@Model.User.LastName</strong></p>
+        <br /><br />
+        <div class="editbuttons">
+            <div class="container" style="margin-left:5%">
+                <div class="row">
+                    <div class="col-sm-3 " style="background-color:rgba(4, 160,133, 5); padding: 10px; border-radius:10px; margin-right:1%; margin-bottom:1%; cursor:pointer" onmouseover="this.style.background = 'rgba(10, 114,94, 5)';" onmouseout="this.style.background = 'rgba(4, 160,133, 5)';">
+                        <a asp-controller="Account" asp-action="ChangePassword" class="change-pass-button" style="color:white">Change Password</a>
+                    </div>
+                   
+                    <div class="col-sm-3 "style="background-color:rgba(4, 160,133, 5); padding: 10px; border-radius:10px;margin-right:1%;margin-bottom:1%; cursor:pointer" onmouseover="this.style.background = 'rgba(10, 114,94, 5)';" onmouseout="this.style.background = 'rgba(4, 160,133, 5)';">
+                        <a asp-controller="Account" asp-action="ChangeEmail" class="change-email-button" style="color:white">Change Email</a>
+                    </div>
+                   
+                    <div class="col-sm-3 "style="background-color:rgba(4, 160,133, 5); padding: 10px; border-radius:10px;cursor:pointer" onmouseover="this.style.background = 'rgba(10, 114,94, 5)';" onmouseout="this.style.background = 'rgba(4, 160,133, 5)';">
+                        <a asp-controller="Account" asp-action="ChangeName" class="change-name-button" style="color:white">Change First Name and/or Last Name</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
     </div>
+    <br /><br /><br />
+    <h1 class="yourPets"> Your Pets:<a href="/Account/RegisterPet" class="add-button">Add Pet</a></h1>
+    <br /><br /><br /><br />
+    <div class="all">
+        <div class="container">
+            <div class="row">
 
+                @foreach (Pets pet in Model.Pets)
+                {
+                    <div class="col-sm-3" style="padding-left: 50px">
+                        <div class="card">
+                            <div class="userhomebanner">
+                                <div class="userhomeavatar" style="background-image: url(@pet.Photo)"></div>
+                            </div>
+                            <h3 class="userhomepetname">@pet.Name</h3>
+                            <a class="userhomepetinfo"> Age: @pet.Age</a>
+                            <a class="userhomepetinfo"> Weight: @pet.Weight</a>
+                            <a class="userhomepetinfo"> Type: @pet.Type</a>
+                            <a class="userhomepetinfo"> Breed: @pet.Breed</a>
+                            <a class="userhomepetinfo"> personality: @pet.Personality</a>
+
+                            <ul class="userhomepetrating">
+                                <a asp-controller="Account" asp-action="DeletePet" asp-route-id="@pet.Id" method="get" class="delete-button">Delete Pet</a>
+                                <br />
+                                <a asp-controller="Account" asp-action="UpdatePet" asp-route-id="@pet.Id" method="get" class="update-pet-button">Update Pet Info</a>
+                            </ul>
+                        </div>
+                        <br />
+                    </div>
+                    
+                }
+                <!--<a class="choosePet">Edit?</a>-->
+            </div>
+        </div>
+
+    </div>
 </div>

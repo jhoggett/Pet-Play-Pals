@@ -11,5 +11,15 @@ namespace WebApplication.Web.DAL
         IList<Pets> GetAllPets(int userId);
 
         int AddPet(Pets pet);
+
+        Pets GetPetById(int userId);
+
+        /// <summary>
+        /// Deletes a user from the system.
+        /// </summary>
+        /// <param name="user"></param>
+        void DeletePet(Pets pet);
+
+        void UpdatePet(Pets pet);
     }
 }

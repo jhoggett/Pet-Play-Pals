@@ -160,7 +160,7 @@ namespace WebApplication.Tests.Providers
 
             // Assert
             Assert.IsTrue(result);
-            mockUserDal.Verify(m => m.UpdateUser(It.IsAny<User>()));
+            mockUserDal.Verify(m => m.UpdateUserPassword(It.IsAny<User>()));
         }
 
         [TestMethod]
@@ -170,7 +170,7 @@ namespace WebApplication.Tests.Providers
             var provider = new SessionAuthProvider(mockAccessor.Object, mockUserDal.Object);
 
             // Act
-            provider.Register("test", "password123", "user");
+            provider.Register("test", "password123", "user", "lastName", "role");
 
             // Assert
             mockUserDal.Verify(m => m.CreateUser(It.IsAny<User>()));

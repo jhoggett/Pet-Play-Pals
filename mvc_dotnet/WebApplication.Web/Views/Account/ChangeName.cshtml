@@ -1,0 +1,23 @@
+﻿@using WebApplication.Web.Models.Account;
+@model User
+@{
+    ViewData["Title"] = "ChangeName";
+}
+<a asp-action="Index" asp-controller="Account" class="go-back-button">Go Back to Edit Profile</a>
+<h2>Change Name</h2>
+
+<p>If you did not enter a first/last name enter one in the blank box, otherwise replace your current name with a new one.</p>
+
+<form asp-controller="account" asp-action="changename" method="post">
+    <div class="form-group">
+        <label asp-for="FirstName">First Name</label>
+        <input type="text" asp-for="FirstName" />
+        <span asp-validation-for="FirstName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName">Last Name</label>
+        <input type="text" asp-for="LastName" />
+        <span asp-validation-for="LastName"></span>
+    </div>
+    <input type="submit" value="Change Name" class="btn btn-default" />
+</form>

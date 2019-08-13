@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿
 @{
     ViewData["Title"] = "LoggedInUserHome";
@@ -71,3 +72,89 @@
 
     }
 </div>
+=======
+﻿@model ReservationUserViewModel
+@{
+    ViewData["Title"] = "UserHome";
+}
+
+@*Somehow build something that shows the users pending invites for now*@
+
+    
+    
+    <img class="user-page-img" style="width: 100% ; margin-top: -45% ;margin-bottom:20% ;margin-top: 1%" src="~/images/userhomeimg (1).png" /> <br /><br />
+
+<div class="wholeuserhome" style="background-color: rgba(157,177,210,5) ; margin-top: -43%">
+
+
+    <br /><br />
+    <div class="container" style="padding-left:18%">
+        <div class="row" style="">
+            
+            <div class="col-sm-4" style="margin-right:25% ;margin-left:-5%">
+                <h2 class="PendingInvitesUserPage"><img class="" style="margin:auto; width:50%;" src="~/images/PENDING INVITES.png" /></h2><br />
+                @foreach (Reservation pending in Model.Pending)
+                { /*Send them to the "details" page of this playdate so they can either accept or decline it....*/
+                    <div class="card" style="margin:auto; width:50%;">
+                        <p><a asp-action="PendingReservation" asp-controller="Reservation" asp-route-id="@pending.ReservationId" > @pending.Description</a></p>
+                        <p>@pending.Address</p>
+                        <p>@pending.StartTime</p>
+                    </div>
+                    
+                }
+
+
+            </div>
+            
+            <div class="col-sm-4"style="">
+                <h2 class="AcceptedInvitesUserPage"><img class="" style="margin:auto; width:50%;" src="~/images/accepted invites.png" /></h2><br />
+                @foreach (Reservation accepted in Model.Accepted)
+                {
+                    <div class="card">
+                        <p><a asp-action="AcceptedReservation" asp-controller="Reservation" asp-route-id="@accepted.ReservationId">@accepted.Description</a></p>
+                        <p>@accepted.Address</p>
+                        <p>@accepted.StartTime</p>
+                    </div>
+                    <br />
+                }
+
+            </div>
+
+        </div>
+    </div>
+
+    <h3 class="titleforpets">Your Pets:</h3><br />
+
+    <div class="all">
+        <div class="container">
+            <div class="row">
+
+                @foreach (Pets pet in Model.Pets)
+                {
+                    <div class="col-sm-3" style="padding-left: 50px">
+                        <div class="card">
+                            <div class="userhomebanner">
+                                <div class="userhomeavatar" style="background-image: url(@pet.Photo)"></div>
+                            </div>
+                            <h3 class="userhomepetname">@pet.Name</h3>
+                            <a class="userhomepetinfo"> Age: @pet.Age</a>
+                            <a class="userhomepetinfo"> Weight: @pet.Weight</a>
+                            <a class="userhomepetinfo"> Type: @pet.Type</a>
+                            <a class="userhomepetinfo"> Breed: @pet.Breed</a>
+                            <a class="userhomepetinfo"> personality: @pet.Personality</a>
+
+                            <ul class="userhomepetrating">
+                                button for whatever
+                            </ul>
+                        </div>
+                        <br />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+>>>>>>> 2d2117480db8baebaf1994e1a1060d26fe2c9253

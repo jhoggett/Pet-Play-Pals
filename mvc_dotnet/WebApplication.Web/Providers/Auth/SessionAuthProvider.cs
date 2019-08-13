@@ -81,7 +81,7 @@ namespace WebApplication.Web.Providers.Auth
                 user.Salt = newHash.Salt;
 
                 // Save into the db
-                userDAL.UpdateUser(user);
+                userDAL.UpdateUserPassword(user);
 
                 return true;
             }
@@ -142,5 +142,66 @@ namespace WebApplication.Web.Providers.Auth
             return (user != null) && 
                 roles.Any(r => r.ToLower() == user.Role.ToLower());
         }
+
+        public bool ChangeEmail(string existingEmail, string newEmail)
+        {
+            var hashProvider = new HashProvider();
+            var user = GetCurrentUser();
+
+            // Confirm existing email match
+            if (user != null && user.Username == existingEmail)
+            {
+                // Update current email with new email
+                user.Username = newEmail;
+
+                // Save into the db
+                userDAL.UpdateUserEmail(user);
+
+                Session.SetString(SessionKey, user.Username);
+                return true;
+            }
+
+            return false;
+        }
+
+        //public bool ChangeFirstName(string newName)
+        //{
+        //    var user = GetCurrentUser();
+
+        //    // Confirm existing email match
+        //    if (user != null && user.FirstName == existingName)
+        //    {
+        //        // Update current email with new email
+        //        user.FirstName = newName;
+
+        //        // Save into the db
+        //        userDAL.UpdateUserFirstName(user);
+
+        //        Session.SetString(SessionKey, user.Username);
+        //        return true;
+        //    }
+
+        //    return false;
+        //}
+
+        //public bool ChangeLastName(string newName)
+        //{
+        //    var user = GetCurrentUser();
+
+        //    // Confirm existing email match
+        //    if (user != null && user.LastName == existingName)
+        //    {
+        //        // Update current email with new email
+        //        user.LastName = newName;
+
+        //        // Save into the db
+        //        userDAL.UpdateUserLastName(user);
+
+        //        Session.SetString(SessionKey, user.Username);
+        //        return true;
+        //    }
+
+        //    return false;
+        //}
     }
 }

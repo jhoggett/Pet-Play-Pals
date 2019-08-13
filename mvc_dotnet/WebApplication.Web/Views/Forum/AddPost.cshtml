@@ -1,0 +1,46 @@
+﻿@model ForumPostUserVM
+@{
+    ViewData["Title"] = "AddPost";
+}
+
+
+<h2>AddPost</h2>
+
+<form method="post" asp-controller="Forum" asp-action="AddPost">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td><label asp-for="Post.User"></label></td>
+                <td>
+                    <select name="Post.User">
+                        <option>@Model.CurrentUser.FirstName @Model.CurrentUser.LastName</option>
+                        <option>Anonymous</option>
+                    </select>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td><label asp-for="Post.Subject"></label></td>
+                <td>
+                    <input asp-for="Post.Subject" />
+                </td>
+
+            </tr>
+            <tr>
+                <td><label asp-for="Post.Message"></label></td>
+                <td>
+                    <input asp-for="Post.Message" />
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add Post" /></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+<h2><a asp-action="Index" asp-controller="Forum">Back to the Forum!</a></h2>
+
