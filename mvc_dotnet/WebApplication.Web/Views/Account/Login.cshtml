@@ -5,9 +5,16 @@
 }
 
 
+
+
+
+
 <body>
+
     <br /><br /><br />
-    <form asp-controller="account" asp-action="login" class="logincontainer" method="post">
+
+    <form asp-controller="account" asp-action="login" class="logincontainer" method="post" style="">
+
         <h2 class="loginlable" style="margin-left: 25%; color:white ; padding-left: 15%">Login</h2>
 
         <lable class="loginlable"><label asp-for="Email"></label></lable>
@@ -20,4 +27,6 @@
         <input type="submit" value="Login" class="llb" />
         <a asp-controller="Account" asp-action="Register" class="llb">Register Here!</a>
     </form>
+
 </body>
+
