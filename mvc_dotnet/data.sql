@@ -12,7 +12,11 @@ values			 (4, 'Sammie', 'cat', 'Sassy little kitten who yells a lot', 1, 'tabby'
 				 (2, 'Winston', 'cat', 'A little sweetheart who is playful', 4, 'American Short-Hair', 6, 'http://res.cloudinary.com/petplaypals/image/upload/v1565198969/Winston_yqfuvl.jpg'),
 				 (3, 'Hulk', 'dog', 'Spunky little monster who loves to play fetch', 6, 'Miniature Pomeranian', 1, 'http://res.cloudinary.com/petplaypals/image/upload/v1565199578/Hulk_yqb6si.jpg'),
 				 (1, 'Pixie', 'dog', 'Well trained and loves other dogs', 57, 'Belgian Shepherd Dog Malinois', 3, 'http://res.cloudinary.com/petplaypals/image/upload/v1565200092/Pixie_rac3oi.jpg'),
-				 (5, 'Blaze', 'dog', 'Super sweet to Humans, a jerk to other dogs', 75, 'Retriever Mix', 7, 'http://res.cloudinary.com/petplaypals/image/upload/v1565638980/uzmtcgzfarjyh38nzrzv_vlrwr0.jpg')
+				 (5, 'Blaze', 'dog', 'Super sweet to Humans, a jerk to other dogs', 75, 'Retriever Mix', 7, 'http://res.cloudinary.com/petplaypals/image/upload/v1565638980/uzmtcgzfarjyh38nzrzv_vlrwr0.jpg'),
+				 (6, 'Precious', 'dog', 'Will lick you to death', 16, 'Jack Russel', 11, 'http://res.cloudinary.com/petplaypals/image/upload/v1565789709/Precious2_sdc3ax.jpg'),
+				 (6, 'Buddy', 'dog', 'Does not want to be bothered', 23, 'Beagle', 7, 'http://res.cloudinary.com/petplaypals/image/upload/v1565789980/Buddy2_rzu1br.jpg'),
+				 (6, 'Graycie', 'cat', 'Friendly and playful to everyone', 11, 'American Short-Hair', 11, 'http://res.cloudinary.com/petplaypals/image/upload/v1565790108/Graycie_ujozag.jpg'),
+				 (6, 'Callie', 'cat', 'Grumpy and strong willed ', 10, 'Calico', 11, 'http://res.cloudinary.com/petplaypals/image/upload/v1565790221/callie_e9tea8.jpg')
 			
 Insert into Reservations (address, startTime, endTime, petName, description)
 Values ('541 E. 266th St. Euclid Ohio 44132', '160819 12:00:00 PM', '160819 2:00:00 PM', 'Sammie', 'Walk in the park'),
