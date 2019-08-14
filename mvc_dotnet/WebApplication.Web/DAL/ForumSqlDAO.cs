@@ -51,7 +51,7 @@ namespace WebApplication.Web.DAL
             }
             catch (SqlException ex)
             {
-                throw;
+                throw ex;
             }
 
             return forumList;
@@ -116,6 +116,59 @@ namespace WebApplication.Web.DAL
             {
                 throw ex;
             }
+        }
+
+        public void SaveComment (ForumPostComments comment)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = $"insert into Forum_Post_Comment (username, message) values (@username, @message);";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@username", comment.User);
+                    cmd.Parameters.AddWithValue("@message", comment.Message);
+                    cmd.ExecuteScalar();
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public IList<ForumPostComments> GetAllCommentsByPost(ForumPost forumPost)
+        {
+            List<ForumPostComments> commentsList = new List<ForumPostComments>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = $"SELECT * FROM Forum_Post_Comment Where postId = @id order by id desc";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@id", forumPost.Id);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        ForumPostComments comment = new ForumPostComments();
+                        comment.Id = Convert.ToInt32(reader["id"]);
+                        comment.Message = Convert.ToString(reader["message"]);
+                        commentsList.Add(comment);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+
+            return commentsList;
         }
     }
 }

@@ -11,5 +11,9 @@ namespace WebApplication.Web.DAL
         IList<ForumPost> GetAllPosts();
         void SaveNewPost(ForumPost post);
         ForumPost GetPostById(int id);
+
+        IList<ForumPostComments> GetAllCommentsByPost(ForumPost forumPost);
+        void SaveComment(ForumPostComments comment);
+
     }
 }

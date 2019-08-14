@@ -62,7 +62,34 @@ namespace WebApplication.Web.Controllers
         {
             ForumPost post = new ForumPost();
             post = forumDAO.GetPostById(id);
+            post.Comments = forumDAO.GetAllCommentsByPost(post);
             return View(post);
         }
+
+        [HttpGet]
+        public IActionResult AddComment()
+        {
+            var user = authProvider.GetCurrentUser();
+            ForumCommentVM vm = new ForumCommentVM();
+            vm.CurrentUser = userDAL.GetUser(user.Username);
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public IActionResult AddComment(ForumCommentVM vm)
+        {
+            var user = authProvider.GetCurrentUser();
+            vm.CurrentUser = userDAL.GetUser(user.Username);
+            forumDAO.SaveComment(vm.Comment);
+            return RedirectToAction("Index", "Forum");
+        }
+
+        //[HttpGet]
+        //public IActionResult GetComments(ForumPost forumPost)
+        //{
+        //    IList<ForumPostComments> commentList = forumDAO.GetAllCommentsByPost(forumPost);
+        //    return View(commentList);
+        //}
     }
 }

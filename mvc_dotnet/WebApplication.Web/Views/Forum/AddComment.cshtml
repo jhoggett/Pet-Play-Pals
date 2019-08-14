@@ -1,0 +1,37 @@
+﻿@model ForumCommentVM
+@{
+    ViewData["Title"] = "AddComment";
+}
+
+<h2>Add Comment</h2>
+
+<form method="post" asp-controller="Forum" asp-action="AddComment">
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <td><label asp-for="Comment.User"></label></td>
+                <td>
+                    <select name="Post.User">
+                        <option>@Model.CurrentUser.FirstName @Model.CurrentUser.LastName</option>
+                        <option>Anonymous</option>
+                    </select>
+                </td>
+
+
+            </tr>
+            <tr>
+                <td><label asp-for="Comment.Message"></label></td>
+                <td>
+                    <input asp-for="Comment.Message" />
+                </td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Add Comment" /></td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+
+<h2><a asp-action="PostDetails" asp-controller="Forum">Back to Forum Post!</a></h2>
