@@ -3,22 +3,22 @@
     ViewData["Title"] = "PostDetails";
 }
 
-<h2>PostDetails</h2>
+<h2 style="margin-left:45%">PostDetails</h2>
 
-<table class="table table-striped forumcard">
+<table class="table table-striped forumcard"style="">
 
     <tbody>
         <tr>
-            <td>User: @Model.User</td>
+            <td><strong>User:</strong> @Model.User</td>
         </tr>
         <tr>
-            <td>Date Posted: @Model.Post_Date</td>
+            <td><strong>Date Posted:</strong> @Model.Post_Date</td>
         </tr>
         <tr>
-            <td>Subject: @Model.Subject</td>
+            <td><strong>Subject:</strong> @Model.Subject</td>
         </tr>
         <tr>
-            <td>Message: @Model.Message</td>
+            <td><strong>Message:</strong> @Model.Message</td>
         </tr>
     </tbody>
 </table>
