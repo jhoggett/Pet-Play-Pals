@@ -16,23 +16,23 @@
     <br /><br />
     <div class="container" style="padding-left:18%">
         <div class="row" style="">
-            
+
             <div class="col-sm-4" style="margin-right:25% ;margin-left:-5%">
                 <h2 class="PendingInvitesUserPage"><img class="" style="margin:auto; width:50%;" src="~/images/PENDING INVITES.png" /></h2><br />
                 @foreach (Reservation pending in Model.Pending)
                 { /*Send them to the "details" page of this playdate so they can either accept or decline it....*/
                     <div class="card" style="margin:auto; width:50%;">
-                        <p><a asp-action="PendingReservation" asp-controller="Reservation" asp-route-id="@pending.ReservationId" > @pending.Description</a></p>
+                        <p><a asp-action="PendingReservation" asp-controller="Reservation" asp-route-id="@pending.ReservationId"> @pending.Description</a></p>
                         <p>@pending.Address</p>
                         <p>@pending.StartTime</p>
                     </div>
-                    
+                    <br />
                 }
 
 
             </div>
-            
-            <div class="col-sm-4"style="">
+
+            <div class="col-sm-4" style="">
                 <h2 class="AcceptedInvitesUserPage"><img class="" style="margin:auto; width:50%;" src="~/images/accepted invites.png" /></h2><br />
                 @foreach (Reservation accepted in Model.Accepted)
                 {
@@ -40,6 +40,20 @@
                         <p><a asp-action="AcceptedReservation" asp-controller="Reservation" asp-route-id="@accepted.ReservationId">@accepted.Description</a></p>
                         <p>@accepted.Address</p>
                         <p>@accepted.StartTime</p>
+                    </div>
+                    <br />
+                }
+
+            </div>
+
+            <div class="col-sm-4" style="">
+                <h2 class="AcceptedInvitesUserPage"><img class="" style="margin:auto; width:50%;" src="~/images/accepted invites.png" /></h2><br />
+                @foreach (Reservation declined in Model.Declined)
+                {
+                    <div class="card">
+                        <p>@declined.Description</p>
+                        <p>@declined.Address</p>
+                        <p>@declined.StartTime</p>
                     </div>
                     <br />
                 }

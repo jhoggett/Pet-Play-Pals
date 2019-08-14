@@ -21,7 +21,9 @@ namespace WebApplication.Web.DAL
 
         void AcceptPendingReservation(int userId, int reservationId);
 
-        void DeclinePendingReservation(int userId, int reservationId);
+        void DeclinePendingReservation(int reservationId);
+
+       IList<Reservation> GetAllDeclinedReservations(int userId);
 
         Reservation GetAcceptedReservation(int userId, int reservationId);
     }

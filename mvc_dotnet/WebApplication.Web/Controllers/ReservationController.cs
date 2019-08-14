@@ -90,10 +90,10 @@ namespace WebApplication.Web.Controllers
 
 
         [HttpPost]
-        public IActionResult DeclineReservation(int ReservationId, int UserId)
+        public IActionResult DeclineReservation(int ReservationId)
         {
 
-            reservationDAO.DeclinePendingReservation(UserId, ReservationId);
+            reservationDAO.DeclinePendingReservation(ReservationId);
             return RedirectToAction("UserHome", "Account");
         }
 

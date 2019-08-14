@@ -78,6 +78,7 @@ namespace WebApplication.Web.Controllers
             vm.Pets = petDAO.GetAllPets(user.Id);
             vm.Accepted = reservationDAO.GetAllAcceptedReservations(user.Id);
             vm.Pending = reservationDAO.GetAllPendingReservations(user.Id);
+            vm.Declined = reservationDAO.GetAllDeclinedReservations(user.Id);
 
             return View(vm);
         }
