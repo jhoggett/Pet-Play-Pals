@@ -15,6 +15,7 @@ namespace WebApplication.Web.Models
         public User InvitedUser { get; set; }
         public IList<Reservation> Pending { get; set; }
         public IList<Reservation> Accepted { get; set; }
+        public IList<Reservation> Declined { get; set; }
 
     }
 }

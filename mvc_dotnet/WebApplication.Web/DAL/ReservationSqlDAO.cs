@@ -273,7 +273,7 @@ namespace WebApplication.Web.DAL
            
         }
 
-        public void DeclinePendingReservation(int userId, int reservationId)
+        public void DeclinePendingReservation(int reservationId)
         {
 
 
@@ -284,11 +284,11 @@ namespace WebApplication.Web.DAL
                 {
                     conn.Open();
 
-                    string sql = $"Update Users_Reservations set status = 3 where userId = @userId and @reservationId = reservationId";
+                    string sql = $"Update Users_Reservations set status = 3 where @reservationId = reservationId";
 
                     SqlCommand cmd = new SqlCommand(sql, conn);
 
-                    cmd.Parameters.AddWithValue("@userId", userId);
+                    
                     cmd.Parameters.AddWithValue("@reservationId", reservationId);
 
                     cmd.ExecuteScalar();
@@ -344,6 +344,50 @@ namespace WebApplication.Web.DAL
                 throw ex;
             }
             return reservation;
+        }
+
+        public IList<Reservation> GetAllDeclinedReservations(int userId)
+        {
+            IList<Reservation> list = new List<Reservation>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = $"SELECT * FROM Reservations AS r JOIN Users_Reservations AS ur on r.id = ur.reservationId where userId = @userId and status = 3";
+
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+
+                    cmd.Parameters.AddWithValue("@userId", userId);
+
+                    SqlDataReader rdr = cmd.ExecuteReader();
+
+                    while (rdr.Read())
+                    {
+                        Reservation reservation = new Reservation();
+
+                        reservation.ReservationId = Convert.ToInt32(rdr["id"]);
+                        reservation.Address = Convert.ToString(rdr["address"]);
+                        reservation.StartTime = Convert.ToDateTime(rdr["startTime"]);
+                        reservation.EndTime = Convert.ToDateTime(rdr["endTime"]);
+                        reservation.PetName = Convert.ToString(rdr["petName"]);
+                        reservation.Description = Convert.ToString(rdr["description"]);
+
+
+
+                        list.Add(reservation);
+
+                    }
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            return list;
         }
     }
 }
