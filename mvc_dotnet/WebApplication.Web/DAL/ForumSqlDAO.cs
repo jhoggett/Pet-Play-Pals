@@ -125,10 +125,11 @@ namespace WebApplication.Web.DAL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = $"insert into Forum_Post_Comment (username, message) values (@username, @message);";
+                    string sql = $"insert into Forum_Post_Comment (username, message, postId) values (@username, @message, @postId);";
                     SqlCommand cmd = new SqlCommand(sql, conn);
                     cmd.Parameters.AddWithValue("@username", comment.User);
                     cmd.Parameters.AddWithValue("@message", comment.Message);
+                    cmd.Parameters.AddWithValue("@postId", comment.PostId);
                     cmd.ExecuteScalar();
                 }
             }
@@ -159,6 +160,7 @@ namespace WebApplication.Web.DAL
                         ForumPostComments comment = new ForumPostComments();
                         comment.Id = Convert.ToInt32(reader["id"]);
                         comment.Message = Convert.ToString(reader["message"]);
+                        comment.User = Convert.ToString(reader["username"]);
                         commentsList.Add(comment);
                     }
                 }

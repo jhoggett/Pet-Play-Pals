@@ -16,5 +16,7 @@ namespace WebApplication.Web.Models
         public string Message { get; set; }
 
         public int Id { get; set; }
+
+        public int PostId { get; set; }
     }
 }

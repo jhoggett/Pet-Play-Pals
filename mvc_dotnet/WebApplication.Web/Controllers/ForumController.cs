@@ -67,20 +67,22 @@ namespace WebApplication.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddComment()
+        public IActionResult AddComment(int id)
         {
+            
             var user = authProvider.GetCurrentUser();
             ForumCommentVM vm = new ForumCommentVM();
             vm.CurrentUser = userDAL.GetUser(user.Username);
-
+            vm.PostId = id;
             return View(vm);
         }
 
         [HttpPost]
-        public IActionResult AddComment(ForumCommentVM vm)
+        public IActionResult AddComment(ForumCommentVM vm, int id)
         {
             var user = authProvider.GetCurrentUser();
             vm.CurrentUser = userDAL.GetUser(user.Username);
+            vm.Comment.PostId = id;
             forumDAO.SaveComment(vm.Comment);
             return RedirectToAction("Index", "Forum");
         }

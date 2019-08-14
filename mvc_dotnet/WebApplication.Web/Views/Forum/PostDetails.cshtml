@@ -22,5 +22,22 @@
         </tr>
     </tbody>    
 </table>
-<a asp-controller="Forum" asp-action="AddComment">Add Comment</a>
+
+<table class="table table-striped">
+    <tbody>
+        @foreach(ForumPostComments comment in Model.Comments)
+        {
+            <tr>
+                <td>User: @comment.User</td>
+            </tr>
+            <tr>
+                <td>Comment: @comment.Message</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<a asp-controller="Forum" asp-action="AddComment" asp-route-id="@Model.Id">Add Comment</a>
 <h2><a asp-action="Index" asp-controller="Forum">Back to the Forum!</a></h2>

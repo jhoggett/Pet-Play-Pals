@@ -9,5 +9,6 @@ namespace WebApplication.Web.Models
     {
         public ForumPostComments Comment { get; set; }
         public User CurrentUser { get; set; }
+        public int PostId { get; set; }
     }
 }

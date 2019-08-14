@@ -11,7 +11,7 @@
             <tr>
                 <td><label asp-for="Comment.User"></label></td>
                 <td>
-                    <select name="Post.User">
+                    <select name="Comment.User">
                         <option>@Model.CurrentUser.FirstName @Model.CurrentUser.LastName</option>
                         <option>Anonymous</option>
                     </select>
@@ -28,7 +28,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Add Comment" /></td>
+                <td><input type="submit" value="Add Comment" asp-route-id="@Model.PostId"/></td>
             </tr>
         </tbody>
     </table>
