@@ -48,7 +48,7 @@ body {
     }
 
 .navbar-collapse{
-    background-color: lightgrey;
+    background-color: white;
 }
 
 .imagesonhome {
@@ -353,6 +353,7 @@ body {
 }
 
 
+
 .logincontainer {
     padding-top: 10px;
     padding-bottom: 30%;
@@ -361,8 +362,10 @@ body {
     height: 300px;
     width: 40%;
     background-color: rgba(21, 166,157,5);
+
     box-shadow: 7px 5px 50px grey;
     border-radius: 25px;
+    
 }
 
 .loginlable {
@@ -386,6 +389,8 @@ input {
     font-size: 15px;
     border-radius: 5px;
 }
+
+
 
 .llbforum {
     display: block;
@@ -553,7 +558,7 @@ input {
 
 .userhomepetinfo {
     display: block;
-    padding: 5px 0px;
+    padding: 5px 15px;
     font-size: 14px;
     color: #9E9E9E;
     text-decoration: none;
