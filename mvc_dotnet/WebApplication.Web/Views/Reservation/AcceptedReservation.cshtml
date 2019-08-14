@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "AcceptedReservation";
 }
-
+<a asp-action="UserHome" asp-controller="Account" class="go-back-button">Go Back to User Home Page</a>
 <h2>AcceptedReservation</h2>
 
 <div>
@@ -20,6 +20,7 @@
 <div>
     Pet Coming With Me: @Model.Reservation.PetName
 </div>
+
 <form asp-action="DeclineReservation" asp-controller="Reservation" method="post">
     <div>
         <input type="hidden" name="ReservationId" asp-for="@Model.Reservation.ReservationId" />

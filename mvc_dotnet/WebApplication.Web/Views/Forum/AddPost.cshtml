@@ -4,10 +4,10 @@
 }
 
 
-<h2>AddPost</h2>
+<h2 style="margin-left:48%">Add Post</h2>
 
-<form method="post" asp-controller="Forum" asp-action="AddPost">
-    <table class="table table-striped">
+<form method="post" asp-controller="Forum" asp-action="AddPost" style="">
+    <table class="table table-striped forumcard">
         <tbody>
             <tr>
                 <td><label asp-for="Post.User"></label></td>
@@ -36,7 +36,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Add Post" /></td>
+                <td><input type="submit" value="Add Post" style="margin-left:-10%"/></td>
             </tr>
         </tbody>
     </table>

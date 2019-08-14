@@ -5,10 +5,10 @@
 
 
 @*Maybe have some kind of an image or combo of this header text inside the top banner img...*@
-
-<img class="home-page-img" src="~/images/forumhome (1).png" />
+<br /><br />
+<img class="home-page-img" src="~/images/forumhome (1).png" style="border-top-right-radius: 25px;border-top-left-radius: 25px;"/>
 <h1 class="welcomeforum" style="width:100%">Welcome to Pet Play Pals Forums!</h1>
-<button class="llbforum"><a asp-controller="Forum" asp-action="AddPost">Add a Post!</a></button>
+<button class="llbforum" ><a asp-controller="Forum" asp-action="AddPost" style="color:black ; ">Add a Post!</a></button>
 @foreach (ForumPost post in Model)
 {
     <div class="forumcard">
