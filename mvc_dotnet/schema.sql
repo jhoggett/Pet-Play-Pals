@@ -78,6 +78,17 @@ Create Table Forum_Post
 	Constraint	pk_Forum_Post primary key (id)
 );
 
+Create Table Forum_Post_Comment
+(
+	id		int		identity(1,1),
+	postId	int		not null,
+	username		varchar(50)		not null,
+	message			varchar(1000)	not null,
+
+	Constraint	pk_Forum_Post_Comment	primary key	(id),
+	constraint fk_postId foreign key (postId) references Forum_Post(id),
+);
+
 
 
 ALTER TABLE Users_Reservations
