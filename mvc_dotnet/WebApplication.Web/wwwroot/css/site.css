@@ -405,6 +405,16 @@ input {
     border-radius: 5px;
 }
 
+.error-message {
+    display: block;
+    padding: 5px;
+    margin-left: 9%;
+    margin-bottom: 10px;
+    width: 80%;
+    font-family: Tahoma;
+    font-size: 15px;
+}
+
 
 
 .llbforum {
