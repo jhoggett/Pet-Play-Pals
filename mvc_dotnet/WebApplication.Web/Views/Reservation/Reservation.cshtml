@@ -7,7 +7,7 @@
 
 
 <body>
-    <form asp-action="Reservation" asp-controller="Reservation" method="post" class="makeaPlayDateContainer">
+    <form asp-action="Reservation" asp-controller="Reservation" method="post" class="InvitationCards">
 
         <h2 class="loginlable" style="margin-left: 15%; color:black ; padding-left: 10% ;font-size: 25px">Make A Play Date</h2>
 
@@ -17,8 +17,8 @@
 
         <label asp-for="Reservation.StartTime" class="loginlable">Start Time: </label>
         <input type="date" asp-for="Reservation.StartTime" />
-        <label>Hour:</label>
-        <select name="StartHour">
+        <label class="loginlable">Hour:</label>
+        <select name="StartHour" style="margin-left:35px">
             <option value="0">12 AM</option>
             <option value="1">1 AM</option>
             <option value="2">2 AM</option>
@@ -44,8 +44,8 @@
             <option value="22">10 PM</option>
             <option value="23">11 PM</option>
         </select>
-        <label>Minutes:</label>
-        <select name="StartMinute">
+        <label class="loginlable">Minutes:</label>
+        <select name="StartMinute" style="margin-left:35px">
             <option value="0">00</option>
             <option value="15">15</option>
             <option value="30">30</option>
@@ -55,8 +55,8 @@
 
         <label asp-for="Reservation.EndTime" class="loginlable">End Time:</label>
         <input type="date" asp-for="Reservation.EndTime" />
-        <label>Hour:</label>
-        <select name="EndHour">
+        <label class="loginlable">Hour:</label>
+        <select name="EndHour" style="margin-left:35px">
             Hour:
             <option value="0">12 AM</option>
             <option value="1">1 AM</option>
@@ -83,8 +83,8 @@
             <option value="22">10 PM</option>
             <option value="23">11 PM</option>
         </select>
-        <label>Minutes:</label>
-        <select name="EndMinute">
+        <label class="loginlable">Minutes:</label>
+        <select name="EndMinute" style="margin-left:35px">
             <option value="0">00</option>
             <option value="15">15</option>
             <option value="30">30</option>
