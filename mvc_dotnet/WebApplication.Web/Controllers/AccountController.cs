@@ -62,6 +62,10 @@ namespace WebApplication.Web.Controllers
                 {
                     // Redirect the user where you want them to go after successful login
                     return RedirectToAction("UserHome", "Account");
+                }else
+                {
+                    ViewData["message"] = "Wrong Username or Password, please try again.";
+                    return View(loginViewModel);
                 }
             }
 

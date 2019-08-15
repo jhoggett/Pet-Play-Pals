@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index"><img class="navbar-brand" src="~/images/navbarbrand.png"/></a>
+                <a asp-area="" asp-controller="Home" asp-action="Index"><img class="navbar-brand" src="~/images/navbarbrand.png" /></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -34,13 +34,14 @@
                     <li class="navbar-li"><a asp-area="" asp-controller="Reservation" asp-action="Reservation">Make A Play Date</a></li>
                     <li class="navbar-li"><a asp-area="" asp-controller="Forum" asp-action="Index">Forums</a></li>
                 </ul>
-                
+
                 <ul class="nav navbar-nav navbar-right">
-                    @await  Component.InvokeAsync("NavBar") @* Render the NavBar component. *@
+                    @await Component.InvokeAsync("NavBar") @* Render the NavBar component. *@
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <partial name="_CookieConsentPartial" />
 
