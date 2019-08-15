@@ -13,20 +13,28 @@
 
     <br /><br /><br />
 
-    <form asp-controller="account" asp-action="login" class="logincontainer" method="post" style="">
+                <form asp-controller="account" asp-action="login" class="logincontainer" method="post" style="">
 
-        <h2 class="loginlable" style="margin-left: 25%; color:white ; padding-left: 15%">Login</h2>
+                    <h2 class="loginlable" style="margin-left: 25%; color:white ; padding-left: 15%">Login</h2>
 
-        <lable class="loginlable"><label asp-for="Email"></label></lable>
-        <input type="email" asp-for="Email" />
-        <br />
-        <lable class="loginlable"><label asp-for="Password"></label></lable>
-        <input type="password" asp-for="Password" />
-        <br />
-        <br />
-        <input type="submit" value="Login" class="llb" />
-        <a asp-controller="Account" asp-action="Register" class="llb">Register Here!</a>
-    </form>
-
+                    <lable class="loginlable"><label asp-for="Email"></label></lable>
+                    <input type="email" asp-for="Email" />
+                    <span asp-validation-for="Email" class="error"></span>
+                    <br />
+                    <lable class="loginlable"><label asp-for="Password"></label></lable>
+                    <input type="password" asp-for="Password" />
+                    <span asp-validation-for="Password" class="error"></span>
+                    @if (ViewData["message"] != null)
+                    {
+                        <div class="error-message">                            
+                            <strong>@ViewData["message"]</strong>
+                        </div>
+                    }
+                    <br />
+                    <br />
+                    <input type="submit" value="Login" class="llb" />
+                    <a asp-controller="Account" asp-action="Register" class="llb">Register Here!</a>
+                </form>
+   
 </body>
 
