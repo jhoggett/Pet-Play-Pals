@@ -51,6 +51,10 @@ body {
     background-color: white;
 }
 
+.navbar-toggle{
+    background-color:black;
+}
+
 .imagesonhome {
     position: relative;
     top: 0;
@@ -331,6 +335,17 @@ body {
 .makeaPlayDateContainer {
     padding-top: 10px;
     padding-bottom: 550px;
+    margin-top: 50px;
+    margin-left: 30%;
+    height: 300px;
+    width: 40%;
+    background-color: rgba(21, 166,157,5);
+    box-shadow: 7px 5px 50px grey;
+    border-radius: 25px;
+}
+.addpostContainer {
+    padding-top: 10px;
+    padding-bottom: 350px;
     margin-top: 50px;
     margin-left: 30%;
     height: 300px;
@@ -793,13 +808,18 @@ img.InvitesBannerIMG {
     .logincontainer {
         margin: 10%;
         width: 80%;
-        padding-bottom: 330px;
+        padding-bottom: 360px;
     }
 
     .makeaPlayDateContainer {
         margin: 10%;
         width: 80%;
        
+    }
+
+    .addpostContainer {
+        margin: 10%;
+        width: 80%;
     }
     .registerlable{
       

@@ -4,34 +4,35 @@
 }
 <a asp-action="Index" asp-controller="Forum" class="go-back-button">Back to the Forum!</a>
 
-<h2 style="text-align: center"><b>PostDetails</b></h2>
+<h2 style="text-align: center"><b>Post Details</b></h2>
 
 
 <div class="InvitationCards">
     <div class="inviteItem">
-        <strong>User:</strong> @Model.User
+       <h3 style="background-image: linear-gradient(white, paleturquoise); padding: 20px;border-top-right-radius: 15px;border-top-left-radius: 15px;">@Model.Subject</h3>
+    </div>
+    <div class="inviteItem">
+        <strong>Posted by:</strong> @Model.User
     </div>
     <div class="inviteItem">
         <strong>Date Posted:</strong> @Model.Post_Date
     </div>
 
     <div class="inviteItem">
-        <strong>Subject:</strong> @Model.Subject
-    </div>
-    <div class="inviteItem">
         <strong>Message:</strong> @Model.Message
     </div>
 </div>
 
 <div class="InvitationCards" style="background-color: aquamarine">
+    <h3 style="">Comments:</h3>
     @foreach (ForumPostComments comment in Model.Comments)
     {
-        <div class="inviteItem">
-            <strong>User: </strong>@comment.User
-        </div>
-        <div class="inviteItem">
-            <strong>Comment: </strong>@comment.Message
-        </div>
+
+    <div class="inviteItem">
+        <h5 style="background-color:white; padding: 15px; border-radius: 20px;"><strong>@comment.User : </strong> @comment.Message</h5>
+
+        
+    </div>
     }
 </div>
 
