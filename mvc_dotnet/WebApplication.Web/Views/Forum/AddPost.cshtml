@@ -3,44 +3,29 @@
     ViewData["Title"] = "AddPost";
 }
 
-
-<h2 style="margin-left:48%">Add Post</h2>
-
-<form method="post" asp-controller="Forum" asp-action="AddPost" style="">
-    <table class="table table-striped forumcard">
-        <tbody>
-            <tr>
-                <td><label asp-for="Post.User"></label></td>
-                <td>
-                    <select name="Post.User">
-                        <option>@Model.CurrentUser.FirstName @Model.CurrentUser.LastName</option>
-                        <option>Anonymous</option>
-                    </select>
-                </td>
+<a asp-action="Index" asp-controller="Forum" class="go-back-button">Back to the Forum!</a>
 
 
-            </tr>
-            <tr>
-                <td><label asp-for="Post.Subject"></label></td>
-                <td>
-                    <input asp-for="Post.Subject" />
-                </td>
+<body>
+    <form method="post" asp-controller="Forum" asp-action="AddPost" class="makeaPlayDateContainer">
 
-            </tr>
-            <tr>
-                <td><label asp-for="Post.Message"></label></td>
-                <td>
-                    <input asp-for="Post.Message" />
-                </td>
+        <h2 class="loginlable" style="margin-left: 15%; color:white; padding-left: 10% ;font-size: 25px">Add Post</h2>
 
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Add Post" style="margin-left:-10%"/></td>
-            </tr>
-        </tbody>
-    </table>
-</form>
+        <label asp-for="Post.User" class="loginlable"></label>
+        <select name="Post.User" style="margin-left:35px">
+            <option>@Model.CurrentUser.FirstName @Model.CurrentUser.LastName</option>
+            <option>Anonymous</option>
+        </select>
 
-<h2><a asp-action="Index" asp-controller="Forum">Back to the Forum!</a></h2>
+        <label asp-for="Post.Subject" class="loginlable"></label>
+        <input asp-for="Post.Subject" />
+
+        <label asp-for="Post.Message" class="loginlable"></label>
+        <input asp-for="Post.Message" />
+
+        <input type="submit" value="Add Post" class="makeaplaydatellb" />
+
+    </form>
+</body>
+
 

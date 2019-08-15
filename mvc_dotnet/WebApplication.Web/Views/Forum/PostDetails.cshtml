@@ -2,42 +2,43 @@
 @{
     ViewData["Title"] = "PostDetails";
 }
+<a asp-action="Index" asp-controller="Forum" class="go-back-button">Back to the Forum!</a>
 
-<h2 style="margin-left:45%">PostDetails</h2>
+<h2 style="text-align: center"><b>PostDetails</b></h2>
 
-<table class="table table-striped forumcard"style="">
 
-    <tbody>
-        <tr>
-            <td><strong>User:</strong> @Model.User</td>
-        </tr>
-        <tr>
-            <td><strong>Date Posted:</strong> @Model.Post_Date</td>
-        </tr>
-        <tr>
-            <td><strong>Subject:</strong> @Model.Subject</td>
-        </tr>
-        <tr>
-            <td><strong>Message:</strong> @Model.Message</td>
-        </tr>
-    </tbody>    
-</table>
+<div class="InvitationCards">
+    <div class="inviteItem">
+        <strong>User:</strong> @Model.User
+    </div>
+    <div class="inviteItem">
+        <strong>Date Posted:</strong> @Model.Post_Date
+    </div>
 
-<table class="table table-striped">
-    <tbody>
-        @foreach(ForumPostComments comment in Model.Comments)
-        {
-            <tr>
-                <td>User: @comment.User</td>
-            </tr>
-            <tr>
-                <td>Comment: @comment.Message</td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <div class="inviteItem">
+        <strong>Subject:</strong> @Model.Subject
+    </div>
+    <div class="inviteItem">
+        <strong>Message:</strong> @Model.Message
+    </div>
+</div>
+
+<div class="InvitationCards" style="background-color: aquamarine">
+    @foreach (ForumPostComments comment in Model.Comments)
+    {
+        <div class="inviteItem">
+            <strong>User: </strong>@comment.User
+        </div>
+        <div class="inviteItem">
+            <strong>Comment: </strong>@comment.Message
+        </div>
+    }
+</div>
 
 
 
-<a asp-controller="Forum" asp-action="AddComment" asp-route-id="@Model.Id">Add Comment</a>
-<h2><a asp-action="Index" asp-controller="Forum">Back to the Forum!</a></h2>
+<div style="text-align: center">
+    <div style="display: inline-block">
+        <a asp-controller="Forum" asp-action="AddComment" asp-route-id="@Model.Id" class="inviteChoices">Add Comment</a>
+    </div>
+</div>

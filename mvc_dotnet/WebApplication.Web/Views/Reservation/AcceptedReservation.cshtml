@@ -3,28 +3,42 @@
     ViewData["Title"] = "AcceptedReservation";
 }
 <a asp-action="UserHome" asp-controller="Account" class="go-back-button">Go Back to User Home Page</a>
-<h2>AcceptedReservation</h2>
+<br />
 
-<div>
-    Event: @Model.Reservation.Description
-</div>
-<div>
-    Location: @Model.Reservation.Address
-</div>
-<div>
-    Start Time: @Model.Reservation.StartTime
-</div>
-<div>
-    End Time:  @Model.Reservation.EndTime
-</div>
-<div>
-    Pet Coming With Me: @Model.Reservation.PetName
-</div>
-
-<form asp-action="DeclineReservation" asp-controller="Reservation" method="post">
-    <div>
-        <input type="hidden" name="ReservationId" asp-for="@Model.Reservation.ReservationId" />
-        <input type="hidden" name="UserId" asp-for="@Model.User.Id" />
-        <input id="decline" type="submit" value="No Longer Going" class="btn btn-default" />
+<div style="text-align: center">
+    <div style="display: inline-block">
+        <img src="~/images/banner-pets-dog-cat-boarding.png" class="InvitesBannerIMG" />
     </div>
-</form>
+</div>
+<br />
+<div class="InvitationCards">
+    <h2 class="inviteItem"><b>You have a schedueled Play Date!</b></h2>
+    <br />
+    <div class="inviteItem">
+        <b>Event: </b>@Model.Reservation.Description
+    </div>
+    <div class="inviteItem">
+        <b>Location: </b>@Model.Reservation.Address
+    </div>
+    <div class="inviteItem">
+        <b>Start Time: </b>@Model.Reservation.StartTime
+    </div>
+    <div class="inviteItem">
+        <b>End Time: </b>@Model.Reservation.EndTime
+    </div>
+    <div class="inviteItem">
+        <b>Pet Coming With Me: </b>@Model.Reservation.PetName
+    </div>
+</div>
+
+<div style="text-align: center">
+    <div style="display: inline-block">
+        <form asp-action="DeclineReservation" asp-controller="Reservation" method="post">
+            <div>
+                <input type="hidden" name="ReservationId" asp-for="@Model.Reservation.ReservationId" />
+                <input type="hidden" name="UserId" asp-for="@Model.User.Id" />
+                <input id="decline" type="submit" value="No Longer Going" class="inviteChoices" />
+            </div>
+        </form>
+    </div>
+</div>
