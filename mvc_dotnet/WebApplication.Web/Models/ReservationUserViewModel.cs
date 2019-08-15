@@ -17,5 +17,10 @@ namespace WebApplication.Web.Models
         public IList<Reservation> Accepted { get; set; }
         public IList<Reservation> Declined { get; set; }
 
+        public int StartHour { get; set; }
+        public int StartMinute { get; set; }
+        public int EndHour { get; set; }
+        public int EndMinute { get; set; }
+
     }
 }

@@ -55,7 +55,10 @@ namespace WebApplication.Web.Controllers
             vm.User = userDAL.GetUserById(user.Id);
             vm.InvitedUser = userDAL.GetUser(vm.InvitedUser.Username);
 
-
+            vm.Reservation.StartTime = vm.Reservation.StartTime.AddHours(vm.StartHour);
+            vm.Reservation.StartTime = vm.Reservation.StartTime.AddMinutes(vm.StartMinute);
+            vm.Reservation.EndTime = vm.Reservation.EndTime.AddHours(vm.EndHour);
+            vm.Reservation.EndTime = vm.Reservation.EndTime.AddMinutes(vm.EndMinute);
             reservationDAO.AddReservation(vm);
 
 
