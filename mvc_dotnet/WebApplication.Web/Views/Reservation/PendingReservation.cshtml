@@ -3,37 +3,54 @@
     ViewData["Title"] = "PendingReservation";
 }
 <a asp-action="UserHome" asp-controller="Account" class="go-back-button">Go Back to User Home Page</a>
-<h2>PendingReservation</h2>
-<img src="~/images/banner-pets-dog-cat-boarding.png" />
-<div>
-  Event: @Model.Reservation.Description
-</div>
-<div>
-  Location: @Model.Reservation.Address
-</div>
-<div>
-  Start Time: @Model.Reservation.StartTime
-</div>
-<div>
-   End Time:  @Model.Reservation.EndTime
-</div>
-<div>
-    Pet Coming With Me: @Model.Reservation.PetName
-</div>
-<form asp-action="AcceptReservation" asp-controller="Reservation" method="post">
-    <div>
-        <input type="hidden" name="ReservationId" asp-for="@Model.Reservation.ReservationId" />
-        <input type="hidden" name="UserId" asp-for="@Model.User.Id" />
-        <input id="accept" type="submit" value="Accept" class="btn btn-default" />
+<br />
+
+<div style="text-align: center">
+    <div style="display: inline-block">
+        <img src="~/images/banner-pets-dog-cat-boarding.png" class="InvitesBannerIMG" />
     </div>
-</form>
-<form asp-action="DeclineReservation" asp-controller="Reservation" method="post">
-    <div>
-        <input type="hidden" name="ReservationId" asp-for="@Model.Reservation.ReservationId" />
-        <input type="hidden" name="UserId" asp-for="@Model.User.Id" />
-        <input id="decline" type="submit" value="Decline" class="btn btn-default" />
+</div>
+<br />
+<div class="InvitationCards">
+    <h2 class="inviteItem"><b>@Model.User.Username</b></h2>
+    <h5 class="inviteItem"><b>Would like to invite you on a play date!</b></h5>
+    <br />
+    <div class="inviteItem">
+        <b>Event: </b>@Model.Reservation.Description
     </div>
-</form>
+    <div class="inviteItem">
+        <b>Location: </b>@Model.Reservation.Address
+    </div>
+    <div class="inviteItem">
+        <b>Start Time: </b>@Model.Reservation.StartTime
+    </div>
+    <div class="inviteItem">
+        <b>End Time: </b>@Model.Reservation.EndTime
+    </div>
+    <div class="inviteItem">
+        <b>Pet: </b>@Model.Reservation.PetName
+    </div>
+</div>
+
+<div style="text-align: center">
+    <div style="display: inline-block">
+        <form asp-action="AcceptReservation" asp-controller="Reservation" method="post">
+            <div>
+                <input type="hidden" name="ReservationId" asp-for="@Model.Reservation.ReservationId" />
+                <input type="hidden" name="UserId" asp-for="@Model.User.Id" />
+                <input id="accept" type="submit" value="Accept" class="inviteChoices" />
+            </div>
+        </form>
+        <form asp-action="DeclineReservation" asp-controller="Reservation" method="post">
+            <div>
+                <input type="hidden" name="ReservationId" asp-for="@Model.Reservation.ReservationId" />
+                <input type="hidden" name="UserId" asp-for="@Model.User.Id" />
+                <input id="decline" type="submit" value="Decline" class="inviteChoices" />
+            </div>
+        </form>
+    </div>
+</div>
+
 
 
 

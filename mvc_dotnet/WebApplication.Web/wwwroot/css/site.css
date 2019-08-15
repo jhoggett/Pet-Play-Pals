@@ -574,6 +574,49 @@ userhomepetinfo:hover {
     padding: 15px 0px;
     background-color: #FAFAFA;
 }
+/*Pending and Accepted Invites Pages CSS*/
+img.InvitesBannerIMG {
+    height: auto;
+    width: 65%;
+}
+
+.inviteItem{
+    text-align: center;
+}
+
+.InvitationCards {
+    background-color: paleturquoise;
+    box-shadow: 10px 20px 30px rgba(0,0,0, 0.2);
+    border-radius: 10px;
+    margin: 2rem;
+    max-width: 400px;
+    min-height: 200px;
+    padding: 2.5rem;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inviteChoices {
+    display: block;
+    margin-top: 20px;
+    background-color: #26B297;
+    border-radius: 9px;
+    padding: 4px 10px;
+    height: 30px;
+    width: 150px;
+    color: white;
+    border-style: none;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
 
 
 @media screen and (max-width: 850px) {
@@ -773,6 +816,26 @@ userhomepetinfo:hover {
         display:inline-table;
         white-space:nowrap;
     }
+
+    /*This is where Mark Started CSS... Pray for me...*/
+
+    img.InvitesBannerIMG {
+        height: auto;
+        width: 100%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*
     
     .row {
